@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "lib/main.js",
-  "module": "lib/main.js",
-  "source": "lib/main.js",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "source": "dist/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
