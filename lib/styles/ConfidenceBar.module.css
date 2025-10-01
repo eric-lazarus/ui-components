@@ -1,0 +1,27 @@
+.confidenceBar {
+  height: var(--spacing-02half);
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-01);
+}
+
+.confidenceBar > div {
+  height: 100%;
+  border-radius: var(--radii-full);
+}
+
+.red {
+  background-color: var(--colors-brand-state-error);
+}
+
+.orange {
+  background-color: var(--colors-brand-state-warn);
+}
+
+.yellow {
+  background-color: var(--colors-brand-state-warn-contrast-dark);
+}
+
+.green {
+  background-color: var(--colors-brand-state-success);
+}

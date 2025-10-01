@@ -1,0 +1,145 @@
+.light {
+  background-color: var(--colors-neutral-light);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark10),
+    var(--shadows-blur-dark-small);
+  color: var(--colors-neutral-dark);
+}
+
+.light:hover {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark10),
+    var(--shadows-blur-dark-medium);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light15),
+    var(--shadows-blur-light-small);
+  color: var(--colors-neutral-light);
+}
+
+.dark:hover {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light15),
+    var(--shadows-blur-light-medium);
+}
+
+.searchBar {
+  width: 100%;
+}
+
+.searchBar svg {
+  fill: currentColor;
+}
+
+.collapsible:not(:focus-within) svg {
+  animation: none;
+}
+
+.searchBarLabel,
+.collapsible:focus-within {
+  border: none;
+  border-radius: 5em;
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-flow: column;
+  margin-bottom: var(--spacing-03);
+  max-width: 100%;
+  min-height: var(--spacing-10);
+  padding: var(--spacing-02half) 0 var(--spacing-02half) var(--spacing-10);
+  position: relative;
+  transition: all calc(1s * var(--durations-long));
+  width: 100%;
+}
+
+.collapsible:focus-within {
+  animation: expand-right calc(1s * var(--durations-long)) forwards;
+}
+
+.collapsible:focus-within svg {
+  animation: none;
+}
+
+.collapsible,
+.isCollapsed {
+  animation: shrink-left calc(1.25s * var(--durations-longer)) forwards;
+  gap: var(--spacing-03);
+  justify-content: flex-start;
+  max-width: var(--spacing-10);
+  overflow: hidden;
+  width: var(--spacing-10);
+}
+
+@keyframes shrink-left {
+  from {
+    width: 100%;
+    height: 100%;
+  }
+
+  to {
+    width: min-content;
+    height: 0;
+  }
+}
+
+@keyframes expand-right {
+  0% {
+    width: 0;
+    height: 0;
+    transform: scale3d(1, 1, 1);
+  }
+  20% {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  40% {
+    width: 0;
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.searchBarLabel svg {
+  cursor: pointer;
+  height: var(--spacing-05);
+  left: var(--spacing-02half);
+  pointer-events: none;
+  position: absolute;
+  top: var(--spacing-02half);
+  width: var(--spacing-05);
+  z-index: 1;
+}
+
+.searchBarLabel input {
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-normal);
+  height: 100%;
+  line-height: var(--line-heights-stylized);
+  outline: none;
+  padding: 0;
+  position: absolute;
+  width: 0;
+  transition: all calc(1s * var(--durations-long));
+}
+
+.searchBarLabel input,
+.collapsible:focus-within input {
+  padding-bottom: var(--spacing-00half);
+  padding-left: var(--spacing-10);
+  padding-right: var(--spacing-05);
+  padding-top: var(--spacing-00half);
+  width: 100%;
+}
+
+.searchBarLabel input:focus {
+  border: none;
+  outline: none;
+}

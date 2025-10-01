@@ -1,0 +1,141 @@
+.toolTip {
+  position: relative;
+  min-height: var(--spacing-40);
+  width: calc(var(--spacing-16) * 5);
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.toolTip button {
+  margin-bottom: 0;
+}
+
+.toolTipBody {
+  background-color: var(--colors-brand-metallic-blue);
+  border-radius: var(--radii-rounded);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: var(--spacing-40);
+  padding: var(--spacing-03);
+  position: relative;
+}
+
+.toolTipText {
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-small);
+  color: var(--colors-neutral-light);
+  margin-top: 4px;
+  line-height: 1.3em;
+}
+
+.toolTipShowing {
+  transform: scale(1);
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.toolTipHiding {
+  transform: scale(0);
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.toolTipArrow {
+  position: absolute;
+}
+
+.pos1,
+.pos2 {
+  transform-origin: top right;
+}
+
+.pos3,
+.pos4 {
+  transform-origin: bottom right;
+}
+
+.pos5,
+.pos6 {
+  transform-origin: bottom left;
+}
+
+.pos0,
+.pos7 {
+  transform-origin: top left;
+}
+
+.pos0 .toolTipArrow {
+  top: 0px;
+  left: var(--spacing-04);
+  width: 0;
+  height: 0;
+  border-bottom: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+  border-left: var(--spacing-02half) solid transparent;
+  border-right: var(--spacing-02half) solid transparent;
+}
+
+.pos1 .toolTipArrow {
+  border-bottom: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+  border-left: var(--spacing-02half) solid transparent;
+  border-right: var(--spacing-02half) solid transparent;
+  height: 0;
+  right: var(--spacing-04);
+  top: 0px;
+  width: 0;
+}
+
+.pos2 .toolTipArrow {
+  border-bottom: var(--spacing-02half) solid transparent;
+  border-left: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+  border-top: var(--spacing-02half) solid transparent;
+  height: 0;
+  right: 0;
+  top: var(--spacing-04);
+  width: 0;
+}
+
+.pos3 .toolTipArrow {
+  bottom: var(--spacing-04);
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: var(--spacing-02half) solid transparent;
+  border-bottom: var(--spacing-02half) solid transparent;
+  border-left: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+}
+
+.pos4 .toolTipArrow {
+  bottom: 0px;
+  right: var(--spacing-04);
+  width: 0;
+  height: 0;
+  border-top: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+  border-left: var(--spacing-02half) solid transparent;
+  border-right: var(--spacing-02half) solid transparent;
+}
+
+.pos5 .toolTipArrow {
+  bottom: 0px;
+  left: var(--spacing-04);
+  width: 0;
+  height: 0;
+  border-top: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+  border-left: var(--spacing-02half) solid transparent;
+  border-right: var(--spacing-02half) solid transparent;
+}
+
+.pos6 .toolTipArrow {
+  bottom: var(--spacing-04);
+  width: 0;
+  height: 0;
+  border-top: var(--spacing-02half) solid transparent;
+  border-bottom: var(--spacing-02half) solid transparent;
+  border-right: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+}
+
+.pos7 .toolTipArrow {
+  top: var(--spacing-04);
+  width: 0;
+  height: 0;
+  border-top: var(--spacing-02half) solid transparent;
+  border-bottom: var(--spacing-02half) solid transparent;
+  border-right: var(--spacing-02half) solid var(--colors-brand-metallic-blue);
+}

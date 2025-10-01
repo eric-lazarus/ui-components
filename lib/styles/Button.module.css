@@ -1,0 +1,243 @@
+.button {
+  align-items: center;
+  backdrop-filter: blur(var(--radii-huge));
+  background-color: transparent;
+  border: solid var(--border-widths-normal) transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  gap: var(--spacing-03);
+  font-family: var(--font-families-stylized), monospace;
+  font-size: var(--font-sizes-small);
+  font-weight: var(--font-weights-regular);
+  justify-content: center;
+  line-height: var(--spacing-04);
+  min-height: var(--spacing-10);
+  padding-bottom: var(--spacing-02);
+  padding-left: var(--spacing-04);
+  padding-right: var(--spacing-04);
+  padding-top: var(--spacing-02);
+  position: relative;
+  transition: all calc(1s * var(--durations-medium));
+  width: max-content;
+}
+
+.button[disabled] {
+  cursor: not-allowed;
+  filter: saturate(0.5);
+  opacity: var(--opacities-60);
+}
+
+.button:focus {
+  box-shadow: none !important;
+}
+
+.button.light:focus {
+  outline: solid var(--border-widths-medium)
+    var(--colors-semi-transparent-dark20);
+}
+
+.button.dark:focus {
+  outline: solid var(--border-widths-medium)
+    var(--colors-semi-transparent-light20);
+}
+
+.button.light:hover,
+.button.light.selected {
+  box-shadow: var(--shadows-flat-dark-medium);
+}
+
+.button.dark:hover,
+.button.dark.selected {
+  box-shadow: var(--shadows-flat-light-medium);
+}
+
+.button .icon,
+.button svg {
+  height: var(--spacing-04);
+  width: auto;
+}
+
+.buttonMultiSelect {
+  cursor: not-allowed;
+  opacity: var(--opacities-40);
+}
+.button svg {
+  fill: currentColor;
+}
+
+.button.iconEdge {
+  padding-left: var(--spacing-12);
+  padding-right: var(--spacing-12);
+}
+
+.button.iconLeft.iconEdge .icon {
+  left: var(--spacing-04);
+  position: absolute;
+}
+
+.button.iconRight.iconEdge .icon {
+  right: var(--spacing-04);
+  position: absolute;
+}
+
+.button span {
+  width: max-content;
+}
+
+.light.button-1,
+.light.button-primary {
+  background-color: var(--colors-brand-blue-gray-light);
+  color: var(--colors-brand-metallic-blue);
+  border: solid var(--border-widths-normal) var(--colors-neutral-gray60);
+}
+
+.light.button-2,
+.light.button-secondary {
+  background-color: var(--colors-neutral-gray30);
+  border: solid var(--border-widths-normal) var(--colors-neutral-gray60);
+  color: var(--colors-brand-bright-green);
+}
+
+.light.button-3,
+.light.button-success {
+  background-color: var(--colors-brand-state-success-contrast-light);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-neutral-light);
+}
+
+.light.button-4,
+.light.button-warn {
+  background-color: var(--colors-brand-state-warn);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-neutral-dark);
+}
+
+.light.button-5,
+.light.button-error {
+  background-color: var(--colors-brand-state-error-contrast-light);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-neutral-light);
+}
+
+.light.button-6,
+.light.button-ghost {
+  background-color: var(--colors-semi-transparent-light10);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-brand-metallic-blue);
+}
+
+.light.button-7,
+.light.button-ghost-accent {
+  background-color: var(--colors-semi-transparent-light10);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-brand-atlantic);
+}
+
+.light.button-8,
+.light.button-ghost-success {
+  background-color: var(--colors-semi-transparent-light10);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-brand-state-success-contrast-light);
+}
+
+.light.button-9,
+.light.button-ghost-warn {
+  background-color: var(--colors-semi-transparent-light10);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-brand-state-warn-contrast-light);
+}
+
+.light.button-10,
+.light.button-ghost-error {
+  background-color: var(--colors-semi-transparent-light10);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-brand-state-error-contrast-light);
+}
+
+.dark.button-1,
+.dark.button-primary {
+  background-color: var(--colors-neutral-gray30);
+  border: solid var(--border-widths-normal) var(--colors-neutral-gray60);
+  color: var(--colors-brand-bright-green);
+}
+
+.dark.button-2,
+.dark.button-secondary {
+  background-color: var(--colors-brand-blue-gray-light);
+  color: var(--colors-brand-metallic-blue);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light50);
+}
+
+.dark.button-3,
+.dark.button-success {
+  background-color: var(--colors-brand-state-success);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-neutral-dark);
+}
+
+.dark.button-4,
+.dark.button-warn {
+  background-color: var(--colors-brand-state-warn);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-neutral-dark);
+}
+
+.dark.button-5,
+.dark.button-error {
+  background-color: var(--colors-brand-state-error);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark50);
+  color: var(--colors-neutral-dark);
+}
+
+.dark.button-6,
+.dark.button-ghost {
+  background-color: var(--colors-semi-transparent-light5);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light50);
+  color: var(--colors-brand-light-blue);
+}
+
+.dark.button-7,
+.dark.button-ghost-accent {
+  background-color: var(--colors-semi-transparent-light5);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light50);
+  color: var(--colors-brand-bright-blue);
+}
+
+.dark.button-8,
+.dark.button-ghost-success {
+  background-color: var(--colors-semi-transparent-light5);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light50);
+  color: var(--colors-brand-state-success-contrast-dark);
+}
+
+.dark.button-9,
+.dark.button-ghost-warn {
+  background-color: var(--colors-semi-transparent-light5);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light50);
+  color: var(--colors-brand-state-warn-contrast-dark);
+}
+
+.dark.button-10,
+.dark.button-ghost-error {
+  background-color: var(--colors-semi-transparent-light5);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light50);
+  color: var(--colors-brand-state-error-contrast-dark);
+}

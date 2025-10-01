@@ -1,0 +1,27 @@
+.light {
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  color: var(--colors-neutral-light);
+}
+
+.birthdayForm {
+  display: grid;
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-small);
+  gap: var(--spacing-02);
+  line-height: var(--line-heights-stylized);
+
+  width: 100%;
+}
+
+.birthdayForm > p {
+  margin: 0;
+}
+
+.inputContainer {
+  display: flex;
+  gap: var(--spacing-04);
+  justify-content: space-between;
+}

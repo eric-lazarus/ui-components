@@ -1,0 +1,18 @@
+.chart {
+  height: 100%;
+  width: 100%;
+}
+
+.tooltipLight {
+  box-shadow: var(--shadows-blur-dark-small) !important;
+}
+
+.tooltipDark {
+  background-color: var(--colors-neutral-dark) !important;
+  border-color: var(--colors-neutral-gray30) !important;
+  box-shadow: var(--shadows-blur-light-small) !important;
+}
+
+.tooltipDark * {
+  color: var(--colors-neutral-gray85) !important;
+}

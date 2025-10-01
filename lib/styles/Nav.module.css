@@ -1,0 +1,582 @@
+.light {
+  background-color: var(--colors-neutral-light);
+  color: var(--colors-neutral-gray30);
+  box-shadow: inset calc(var(--border-widths-normal) * -1) 0
+      var(--colors-semi-transparent-dark20),
+    var(--border-widths-large) 0 var(--colors-semi-transparent-dark10);
+}
+
+.light .navLink:hover:not(.disabled),
+.light .navLink.active:not(.disabled) {
+  box-shadow: inset var(--border-widths-medium) 0 var(--colors-brand-atlantic);
+  background-color: var(--colors-semi-transparent-dark5);
+  color: var(--colors-brand-metallic-blue);
+}
+
+.light .logoDiv {
+  color: var(--colors-neutral-dark);
+}
+
+.light .navLink.avatarLink:hover {
+  background-color: var(--colors-semi-transparent-dark2half);
+}
+
+.light .borderTop {
+  box-shadow: inset 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark7half);
+}
+
+.light .rikAIButton,
+.light .RKIButton {
+  box-shadow: inset 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark7half),
+    inset 0 calc(var(--border-widths-normal) * -1)
+      var(--colors-semi-transparent-dark7half);
+  margin-right: var(--border-widths-normal);
+}
+
+.light .rikAIButton.active,
+.light .RKIButton.active,
+.light .RKIButton:hover:not(.disabled),
+.light .rikAIButton:hover:not(.disabled) {
+  background-color: var(--colors-semi-transparent-dark2half);
+  box-shadow: inset 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark7half),
+    inset 0 calc(var(--border-widths-normal) * -1)
+      var(--colors-semi-transparent-dark7half),
+    inset var(--border-widths-medium) 0 var(--colors-brand-bright-orange);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  color: var(--colors-neutral-gray70);
+  box-shadow: inset calc(var(--border-widths-normal) * -1) 0
+      var(--colors-semi-transparent-light7half),
+    var(--border-widths-large) 0 var(--colors-semi-transparent-light5);
+}
+
+.dark .navLink:hover:not(.disabled),
+.dark .navLink.active:not(.disabled) {
+  box-shadow: inset var(--border-widths-medium) 0
+    var(--colors-brand-bright-green);
+  background-color: var(--colors-semi-transparent-light25);
+  color: var(--colors-brand-light-blue);
+}
+
+.dark .logoDiv {
+  color: var(--colors-neutral-light);
+}
+
+.logoA svg {
+  padding: 8%;
+  box-sizing: border-box;
+}
+
+.dark .navLink.avatarLink:hover {
+  background-color: var(--colors-semi-transparent-light10);
+}
+
+.dark .borderTop {
+  box-shadow: inset 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light7half);
+}
+
+.dark .rikAIButton,
+.dark .RKIButton {
+  box-shadow: inset 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light7half),
+    inset 0 calc(var(--border-widths-normal) * -1)
+      var(--colors-semi-transparent-light7half);
+}
+
+.dark .rikAIButton.active,
+.dark .RKIButton.active,
+.dark .RKIButton:hover:not(.disabled),
+.dark .rikAIButton:hover:not(.disabled) {
+  background-color: var(--colors-semi-transparent-light10);
+  box-shadow: inset 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light7half),
+    inset 0 calc(var(--border-widths-normal) * -1)
+      var(--colors-semi-transparent-light7half),
+    inset var(--border-widths-medium) 0 var(--colors-brand-gold);
+}
+
+.Nav {
+  align-content: start;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto auto;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  scrollbar-width: none;
+  top: 0;
+  transform: translateX(-120%);
+  transition: all calc(1s * var(--durations-long));
+  width: var(--spacing-56);
+  z-index: 12;
+}
+
+.Nav a,
+.Nav button {
+  cursor: pointer;
+}
+
+.Nav::-webkit-scrollbar {
+  width: 0em;
+  height: 0em;
+}
+
+.borderTop {
+  align-content: flex-start;
+  display: grid;
+}
+
+.Nav svg {
+  fill: currentColor;
+}
+
+.isCollapsed.isVisible {
+  transform: translateX(calc(0% - var(--spacing-40) - var(--spacing-04)));
+}
+
+.isVisible {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+.logoDiv {
+  align-items: center;
+  align-self: flex-end;
+  box-sizing: border-box;
+  color: inherit;
+  display: flex;
+  justify-content: flex-end;
+  justify-items: flex-end;
+  justify-self: flex-end;
+  height: calc(var(--spacing-12) - var(--border-widths-normal));
+  padding: var(--spacing-01);
+  position: relative;
+  transition: all calc(1s * var(--durations-long));
+  width: var(--spacing-12);
+}
+
+.isCollapsed .logoDiv {
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.logoDiv a {
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: var(--spacing-01);
+  transition: all calc(1s * var(--durations-long));
+  transform: translateX(calc(-1 * var(--spacing-40) - var(--spacing-04)));
+  width: var(--spacing-10);
+}
+
+.isCollapsed .logoDiv a {
+  transform: none;
+}
+
+.logoDiv a svg,
+.logoDiv a svg:hover {
+  animation: none;
+  display: block;
+  height: 100%;
+  opacity: var(--opacities-90);
+  width: var(--spacing-10);
+}
+
+.isCollapsed .expandButton,
+.collapseButton {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  margin-bottom: 0;
+  opacity: var(--opacities-60);
+  pointer-events: all;
+  transition: all calc(1s * var(--durations-long));
+}
+
+.collapseButton {
+  padding-left: var(--spacing-01half);
+  padding-right: var(--spacing-01half);
+  padding-bottom: var(--spacing-01half);
+  padding-top: var(--spacing-01half);
+}
+
+.isCollapsed .expandButton:hover,
+.collapseButton:hover {
+  opacity: var(--opacities-90);
+}
+
+.isCollapsed .collapseButton {
+  opacity: var(--opacities-transparent);
+  pointer-events: none;
+}
+
+.isCollapsed .collapseButton,
+.expandButton {
+  align-content: center;
+  align-self: end;
+  border: none;
+  box-sizing: border-box;
+  display: grid;
+  height: 0;
+  justify-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  opacity: var(--opacities-transparent);
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  pointer-events: none;
+  transform-origin: center;
+  transition: all calc(1s * var(--durations-long));
+  width: 0;
+}
+
+.isCollapsed .expandButton {
+  justify-self: end;
+  width: var(--spacing-12);
+}
+
+.isCollapsed .expandButton i:last-child {
+  position: static;
+  opacity: var(--opacities-60);
+  width: var(--spacing-04);
+}
+
+.isCollapsed .expandButton:hover i:last-child {
+  position: static;
+  opacity: var(--opacities-opaque);
+  width: var(--spacing-04);
+}
+
+.isCollapsed .expandButton {
+  margin-right: 0;
+  opacity: var(--opacities-opaque);
+  padding-bottom: var(--spacing-06);
+  padding-top: var(--spacing-04);
+}
+
+.expandButton i,
+.collapseButton i {
+  height: var(--spacing-04);
+  width: var(--spacing-04);
+}
+
+.avatarDiv {
+  height: 0;
+  opacity: var(--opacities-transparent);
+  overflow: hidden;
+  transform-origin: bottom center;
+  transform: scaleY(0);
+  transition: all calc(1s * var(--durations-long));
+}
+
+.isCollapsed .avatarDiv {
+  transform-origin: bottom center;
+}
+
+.avatarExpanded {
+  height: var(--spacing-16);
+  opacity: var(--opacities-opaque);
+  transform: scaleY(1);
+}
+
+.rikAIButton,
+.RKIButton {
+  box-sizing: border-box;
+  cursor: pointer !important;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.rikAIButton {
+  height: calc(var(--spacing-12) + var(--spacing-03));
+  padding-bottom: var(--spacing-03);
+  padding-left: var(--spacing-03);
+  padding-right: var(--spacing-03);
+  padding-top: calc(var(--spacing-03));
+  transition: all calc(1s * var(--durations-long))
+    calc(1s * var(--delays-medium));
+}
+
+.RKIButton {
+  height: 0;
+  opacity: var(--opacities-transparent);
+  padding-left: var(--spacing-02);
+  padding-right: var(--spacing-02);
+  overflow: hidden;
+  padding-bottom: 0;
+  padding-top: 0;
+  transform: translateX(calc(-1 * var(--spacing-20)));
+  transition: all calc(1s * var(--durations-long)),
+    transform calc(1s * var(--durations-long));
+}
+
+.rikAIButton button,
+.RKIButton button {
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  pointer-events: none;
+}
+
+.rikAIButton button:focus,
+.RKIButton button:focus {
+  outline: none !important;
+}
+
+.isCollapsed .RKIButton {
+  height: calc(var(--spacing-12));
+  opacity: var(--opacities-opaque);
+  justify-self: flex-end;
+  overflow: visible;
+  padding-bottom: var(--spacing-02);
+  padding-top: var(--spacing-02);
+  right: 0;
+  transform: translateX(0);
+  transition: all calc(1s * var(--durations-long)),
+    opacity calc(1s * var(--durations-long)) calc(1s * var(--delays-long));
+  width: var(--spacing-12);
+}
+
+.isCollapsed .rikAIButton {
+  height: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  opacity: var(--opacities-transparent);
+  overflow: hidden;
+  transition: all calc(1s * var(--durations-long)),
+    opacity calc(1s * var(--durations-medium));
+}
+
+.RKIButton button {
+  margin: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.navLink {
+  /* margin-bottom: 1em; */
+  align-items: center;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font-size: var(--font-sizes-small);
+  gap: var(--spacing-02);
+  height: var(--spacing-08);
+  justify-content: space-between;
+  padding-bottom: var(--spacing-02);
+  padding-left: var(--spacing-03);
+  padding-right: var(--spacing-03);
+  padding-top: var(--spacing-02);
+  text-decoration: none;
+  transition: all calc(1s * var(--durations-long));
+  width: 100%;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  opacity: var(--opacities-40) !important;
+}
+
+.navLink .icons {
+  height: var(--spacing-03);
+  position: relative;
+  width: var(--spacing-03);
+}
+
+.navLink svg,
+.navLink i,
+.navLink .icons {
+  transition: all calc(1s * var(--durations-short));
+}
+
+.navLink svg,
+.navLink i {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.navLink.avatarLink {
+  height: var(--spacing-10);
+  padding-bottom: var(--spacing-02);
+  padding-left: calc(var(--spacing-08) + var(--spacing-01half));
+  padding-right: var(--spacing-02half);
+  padding-top: var(--spacing-02);
+  width: var(--spacing-56);
+}
+
+.navLink.avatarLink .icons,
+.navLink.avatarLink .icons i {
+  height: var(--spacing-04);
+  width: var(--spacing-04);
+}
+
+.navLink.avatarLink > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navLink.avatarLink:hover {
+  background-color: transparent;
+}
+
+.Nav.isCollapsed .navLink.avatarLink {
+  height: var(--spacing-12);
+  width: auto;
+}
+
+.navLink.avatarLink button {
+  right: calc(var(--spacing-02) + var(--spacing-001pixel));
+  position: absolute;
+  transform: translateX(calc(-1 * var(--spacing-40) - var(--spacing-06)));
+  transform-origin: right;
+  transition: all calc(1.5s * var(--durations-long));
+  z-index: 1;
+}
+
+.isCollapsed .navLink.avatarLink button {
+  transition: all calc(1s * var(--durations-long));
+}
+
+.navLink.avatarLink .icons i {
+  opacity: var(--opacities-60);
+}
+
+.Nav.isCollapsed .navLink.avatarLink > button {
+  transform: translateX(0);
+}
+
+.Nav .navLink.avatarLink:hover > button {
+  animation: pulseSmallAvatarExpanded calc(1s * var(--durations-long));
+}
+
+.isCollapsed .navLink {
+  gap: 0;
+  height: var(--spacing-08);
+  padding-left: calc(var(--spacing-04) + var(--spacing-00half));
+  padding-right: calc(var(--spacing-04) + var(--spacing-00half));
+  justify-self: flex-end;
+  width: var(--spacing-12);
+}
+
+.isCollapsed .navLink > span {
+  overflow: hidden;
+  width: 0;
+}
+
+.isCollapsed .navLink.avatarLink .icons svg {
+  opacity: var(--opacities-transparent);
+}
+
+.icons.avatarExpanded {
+  transform: rotate(180deg);
+}
+
+.navLink:hover:not(.disabled) > span,
+.Nav.isCollapsed .navLink.avatarLink:hover button {
+  animation: pulseSmall calc(1s * var(--durations-long));
+}
+
+.navLink:hover:not(.disabled) svg,
+.Nav svg:hover {
+  animation: pulse calc(1s * var(--durations-long));
+}
+
+.navLink:hover:not(.disabled) i:first-child,
+.navLink.active:not(.disabled) i:first-child {
+  opacity: var(--opacities-transparent);
+}
+
+.navLink:hover:not(.disabled) i:last-child,
+.navLink.active:not(.disabled) i:last-child {
+  opacity: var(--opacities-opaque);
+}
+
+.navLink i:last-child {
+  opacity: var(--opacities-opaque);
+}
+
+.navLink i:first-child {
+  opacity: var(--opacities-60);
+}
+
+.navLink i:last-child {
+  opacity: var(--opacities-transparent);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulseSmallAvatarExpanded {
+  0% {
+  }
+  50% {
+    font-size: calc(var(--font-sizes-tiny) * 1.04);
+    height: calc(1.04 * var(--spacing-06));
+    width: calc(1.04 * var(--spacing-06));
+  }
+  100% {
+  }
+}
+
+@keyframes pulseSmall {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.04, 1.04, 1.04);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.3, 1.3, 1.3);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}

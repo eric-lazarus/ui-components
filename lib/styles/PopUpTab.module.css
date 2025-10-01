@@ -1,0 +1,28 @@
+.popUpTab {
+  position: absolute;
+  top: 0;
+  width: 12.5em;
+  left: calc(14.5em + 10px);
+  height: 3em;
+  border: 1px solid var(--colors-neutral-black);
+  cursor: pointer;
+  padding: 0.5em;
+  box-sizing: border-box;
+  z-index: 1;
+  background-color: var(--colors-neutral-light);
+  display: flex;
+  align-items: center;
+}
+
+.var(--colors-neutral-black)Tab {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: var(--colors-neutral-black);
+  top: -1px;
+  left: -5px;
+}
+
+.popUpTab p {
+  margin: 0;
+}

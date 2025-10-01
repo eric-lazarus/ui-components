@@ -1,0 +1,35 @@
+/* add css module styles here (optional) */
+
+/* * {
+  font-family: 'Work Sans', sans-serif;
+} */
+
+.font-small {
+  font-size: 0.65em;
+}
+
+.font-large {
+  font-size: 1.5em;
+}
+
+html.scroll-padlock-locked {
+  /* Position-fixed hack, locks iOS too */
+  position: fixed;
+  width: 100%;
+
+  /* Avoids scroll to top */
+  top: calc(var(--scroll-padlock-scroll-top) * -1);
+
+  /* Reserves space for scrollbar */
+  padding-right: var(--scroll-padlock-scrollbar-width);
+}
+
+@font-face {
+  font-family: "aeonikpro-regular";
+  src: url('./fonts/aeonik/aeonikpro-regular.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: 'OCR A Std';
+  src: url('./fonts/OCRAStd.otf') format('opentype');
+}

@@ -1,0 +1,182 @@
+.testThumb {
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: grid;
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-small);
+  gap: var(--spacing-06);
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  padding: var(--spacing-03) var(--spacing-04) var(--spacing-03)
+    var(--spacing-04);
+  transition: all calc(var(--durations-medium) * 1s);
+  width: 100%;
+}
+
+.light {
+  background-color: var(--colors-neutral-light);
+  border-bottom: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark10);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  border-bottom: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light10);
+  color: var(--colors-neutral-light);
+}
+
+.testThumb.dark:hover {
+  box-shadow: var(--shadows-blur-light-medium-heavy);
+}
+
+.testThumb.light:hover {
+  box-shadow: var(--shadows-blur-dark-medium);
+}
+
+.testThumb p {
+  display: flex;
+  gap: var(--spacing-01);
+  margin: 0;
+}
+
+.imageDiv {
+  height: 100%;
+  width: 100%;
+}
+
+.testThumb img,
+.testThumb svg {
+  height: auto;
+  width: var(--spacing-10);
+}
+
+.testThumb svg {
+  fill: currentColor;
+}
+
+.expandDown {
+  animation: expand-down calc(var(--durations-medium) * 1s);
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+.topDiv {
+  display: grid;
+  gap: var(--spacing-01);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  width: 100%;
+}
+
+.bottomDiv {
+  height: var(--spacing-02half);
+}
+
+.textDiv {
+  display: grid;
+  gap: var(--spacing-02half);
+}
+
+.middleDiv,
+.leftDiv,
+.rightDiv {
+  display: grid;
+  gap: 0;
+  justify-content: space-between;
+}
+
+.middleDiv div,
+.leftDiv div,
+.rightDiv div {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-01half);
+}
+
+.rightDiv > div {
+  height: 50%;
+}
+
+.leftDiv > p:first-child,
+.middleDiv > p:first-child {
+  font-size: var(--font-sizes-tiny);
+  opacity: var(--opacities-80);
+}
+
+.condition1,
+.condition2 {
+  font-size: var(--font-sizes-small);
+}
+
+.conditionCircle {
+  width: var(--spacing-02);
+  height: var(--spacing-02);
+  border-radius: var(--radii-full);
+}
+
+.flex {
+  display: flex;
+}
+
+.collapseUp {
+  animation: collapse-up calc(var(--durations-medium) * 1s);
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+.red {
+  background-color: var(--colors-brand-state-error);
+}
+
+.orange {
+  background-color: var(--colors-brand-state-warn);
+}
+
+.yellow {
+  background-color: var(--colors-brand-state-warn-contrast-dark);
+}
+
+.green {
+  background-color: var(--colors-brand-state-success);
+}
+
+@keyframes expand-down {
+  from {
+    max-height: 0;
+  }
+
+  to {
+    max-height: 100%;
+  }
+}
+
+@keyframes collapse-up {
+  from {
+    max-height: 100%;
+  }
+
+  to {
+    max-height: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testThumb {
+    padding: var(--spacing-03) var(--spacing-02half) var(--spacing-03)
+      var(--spacing-04);
+    gap: var(--spacing-05);
+  }
+
+  .textDiv {
+    display: grid;
+    gap: var(--spacing-02);
+  }
+
+  .testThumb img,
+  .testThumb svg {
+    height: auto;
+    width: var(--spacing-08);
+  }
+}

@@ -1,0 +1,293 @@
+/* The switch - the box around the slider */
+.switch {
+  align-items: flex-start;
+  cursor: pointer;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-normal);
+  gap: var(--spacing-02);
+  line-height: var(--line-heights-stylized);
+  margin-bottom: var(--spacing-04);
+  position: relative;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  color: var(--colors-neutral-gray60) !important;
+}
+
+.light {
+  color: var(--colors-neutral-dark);
+}
+
+.light .switchSlider {
+  box-shadow: 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark30);
+}
+
+.light .input:checked + .radio {
+  background-color: var(--colors-brand-neutral-tint);
+}
+
+.light input:checked + .checkbox,
+.light input:checked + .switchSlider {
+  background-color: var(--colors-brand-atlantic);
+}
+.light input:checked + .checkbox {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark20);
+}
+
+.light .switchSlider::before {
+  background-color: var(--colors-semi-transparent-dark30);
+}
+
+.light .switchSlider::before,
+.light .radio {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark30);
+}
+
+.light .checkbox {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark30);
+  color: var(--colors-neutral-light);
+}
+
+.light input:checked + .radio {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-brand-atlantic);
+}
+
+.light input:checked + .switchSlider::before,
+.light input:checked + .radio::before {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark20);
+}
+
+.light input:checked + .radio::before {
+  background-color: var(--colors-brand-atlantic);
+}
+
+.light input:checked + .switchSlider::before {
+  background-color: var(--colors-neutral-light);
+}
+
+.dark {
+  color: var(--colors-neutral-light);
+}
+
+.dark .switchSlider {
+  box-shadow: 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light40);
+}
+
+.dark input:checked + .checkbox {
+  background-color: var(--colors-brand-bright-green);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark20);
+}
+
+.dark input:checked + .switchSlider {
+  background-color: var(--colors-brand-bright-green);
+}
+
+.dark .switchSlider::before {
+  background-color: var(--colors-semi-transparent-light40);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light40);
+}
+
+.dark input:checked + .switchSlider::before,
+.dark input:checked + .radio::before {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-neutral-light);
+}
+
+.dark input:checked + .radio::before {
+  background-color: var(--colors-brand-bright-green);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light40);
+}
+
+.dark input:checked + .switchSlider::before {
+  background-color: var(--colors-neutral-dark);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light40);
+}
+
+.dark .checkbox {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light40);
+  color: var(--colors-neutral-dark);
+}
+
+.dark input + .radio {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light40);
+}
+
+.dark input:checked + .radio {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-brand-bright-green);
+}
+
+.switch:has(.radio) {
+  margin-bottom: var(--spacing-02half);
+}
+
+.reversed .label {
+  order: -1;
+}
+
+.switch .label {
+  margin-top: calc(var(--spacing-00half) / 2);
+}
+
+.switch input:checked + .radio::before {
+  height: 45%;
+  inset: 27.5%;
+  width: 45%;
+}
+
+.switch .radio {
+  position: relative;
+}
+
+.switch .radio,
+.switch .radio::before {
+  border-radius: var(--radii-full);
+}
+
+.switch p {
+  margin: 0;
+}
+
+/* Hide default HTML checkbox */
+.switch .input {
+  height: 0;
+  opacity: var(--opacities-transparent);
+  position: absolute;
+  width: 0;
+}
+
+/* The Wrapper */
+
+.checkbox,
+.switchSlider {
+  height: calc(var(--spacing-05));
+  position: relative;
+}
+
+.checkbox,
+.switchSlider,
+.radio,
+.radio::before {
+  transition: all calc(1s * var(--durations-long));
+}
+
+.radio {
+  height: calc(var(--spacing-05) + var(--spacing-00half));
+  width: calc(var(--spacing-05) + var(--spacing-00half));
+}
+
+.switchSlider {
+  width: calc(var(--spacing-08) + var(--spacing-01));
+}
+
+@media screen and (max-width: 768px) {
+  .switchSlider {
+    height: var(--spacing-04);
+    width: calc(var(--spacing-06) + 5px);
+  }
+}
+
+.checkbox {
+  width: calc(var(--spacing-05));
+}
+
+.checkbox svg {
+  top: var(--spacing-001pixel);
+  height: 100%;
+  left: 0;
+  margin-bottom: 0;
+  opacity: var(--opacities-transparent);
+  transform: scale(0);
+  transition: calc(1s * var(--durations-medium));
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .checkbox {
+    height: var(--spacing-04);
+    position: relative;
+    width: var(--spacing-04);
+  }
+
+  .checkbox svg {
+    top: 0;
+  }
+}
+
+.checkbox svg,
+.switchSlider::before,
+.radio::before {
+  position: absolute;
+}
+
+.switchSlider::before,
+.radio::before {
+  content: '';
+}
+
+.switchSlider::before {
+  bottom: var(--spacing-01);
+  height: var(--spacing-03);
+  left: var(--spacing-01);
+  transition: calc(1s * var(--durations-medium));
+  width: var(--spacing-03);
+}
+
+.input:checked + .checkbox svg {
+  opacity: var(--opacities-opaque);
+  transform: scale(1);
+}
+
+.input:checked + .switchSlider::before {
+  transform: translateX(calc(100% + var(--spacing-01)));
+}
+
+@media screen and (max-width: 768px) {
+  .switchSlider::before {
+    position: absolute;
+    content: '';
+    height: var(--spacing-02half);
+    width: var(--spacing-02half);
+    left: calc(var(--spacing-00half) * 1.5);
+    bottom: calc(var(--spacing-00half) * 1.5);
+    transition: calc(1s * var(--durations-medium));
+  }
+
+  .input:checked + .switchSlider::before {
+    transform: translateX(calc(100% + var(--spacing-00half) * 1.5));
+  }
+
+  .switch input + .radio {
+    height: var(--spacing-05);
+    width: var(--spacing-05);
+  }
+
+  .switch .radio::before {
+    height: 50%;
+    inset: 25%;
+    width: 50%;
+  }
+}
+
+/* Rounded sliders */
+.switchSlider,
+.switchSlider::before {
+  border-radius: var(--radii-full);
+}

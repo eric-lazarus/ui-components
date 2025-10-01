@@ -1,0 +1,67 @@
+.xBoxContainer {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: var(--radii-full);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: grid;
+  height: var(--spacing-06);
+  justify-items: center;
+  position: absolute;
+  padding: 0;
+  top: calc(-0.4 * var(--spacing-06));
+  transition: all calc(1s * var(--durations-medium));
+  width: var(--spacing-06);
+}
+
+.small {
+  height: var(--spacing-06);
+  width: var(--spacing-06);
+}
+
+.large {
+  height: var(--spacing-08);
+  width: var(--spacing-08);
+}
+
+.left {
+  left: calc(-0.4 * var(--spacing-06));
+}
+
+.right {
+  right: calc(-0.4 * var(--spacing-06));
+}
+
+.light {
+  background-color: var(--colors-neutral-light);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark10);
+  color: var(--colors-neutral-dark);
+}
+
+.light:hover {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark10),
+    var(--shadows-blur-dark-small);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light20);
+  color: var(--colors-neutral-light);
+}
+
+.dark:hover {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light20),
+    var(--shadows-blur-light-small-heavy);
+}
+
+.xBoxContainer i {
+  fill: currentColor;
+  height: 66%;
+  margin: 0;
+  width: 66%;
+}

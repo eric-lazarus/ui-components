@@ -1,0 +1,50 @@
+.light,
+.accent {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark15);
+  color: var(--colors-neutral-dark);
+}
+
+.light.ghost {
+  background-color: var(--colors-semi-transparent-light50);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark15);
+}
+
+.dark.ghost {
+  background-color: var(--colors-semi-transparent-dark50);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light30);
+  color: var(--colors-neutral-light);
+}
+
+.accent {
+  background-color: var(--colors-brand-bright-blue);
+}
+
+.pill {
+  align-items: center;
+  backdrop-filter: blur(var(--radii-rounded));
+  border-radius: var(--radii-huge);
+  cursor: default;
+  display: flex;
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-small);
+  justify-content: center;
+  line-height: var(--line-heights-stylized);
+  padding: var(--spacing-01half) var(--spacing-03half)
+    calc(var(--spacing-01half) - 1px);
+  text-align: center;
+  width: fit-content;
+}
+
+@media screen and (max-width: 768px) {
+  .pill {
+    padding: var(--spacing-01half) var(--spacing-03) var(--spacing-01);
+    font-size: var(--font-sizes-tiny);
+  }
+}
+
+.pill > span {
+  opacity: var(--opacities-80);
+}

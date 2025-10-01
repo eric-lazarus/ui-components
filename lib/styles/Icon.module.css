@@ -1,0 +1,12 @@
+.eva {
+  display: inline-grid;
+  align-items: center;
+  justify-items: center;
+  aspect-ratio: 1;
+}
+
+.eva svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

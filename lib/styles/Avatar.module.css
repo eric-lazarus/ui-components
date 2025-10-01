@@ -1,0 +1,136 @@
+.light {
+  background-color: var(--colors-semi-transparent-dark5);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark7half);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  background-color: var(--colors-semi-transparent-light10);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light15);
+  color: var(--colors-neutral-light);
+}
+
+.light:hover {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark7half),
+    var(--shadows-blur-dark-small-light);
+}
+
+.dark:hover {
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light15),
+    var(--shadows-blur-light-small);
+}
+
+.dark::after {
+  box-shadow: inset 0 0 0 var(--border-widths-medium)
+    var(--colors-semi-transparent-light15);
+}
+
+.light::after {
+  box-shadow: inset 0 0 0 var(--border-widths-medium)
+    var(--colors-semi-transparent-dark5);
+}
+
+.avatar.gradient {
+  color: var(--colors-neutral-dark);
+}
+
+.avatar {
+  align-items: center;
+  align-content: center;
+  border-radius: var(--radii-full);
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: grid;
+  height: var(--spacing-12);
+  font-family: var(--font-families-stylized);
+  font-weight: var(--font-weights-regular);
+  font-size: var(--font-sizes-normal);
+  line-height: var(--line-heights-stylized);
+  justify-content: center;
+  justify-items: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  transition: all calc(1s * var(--durations-medium));
+  width: var(--spacing-12);
+}
+
+.avatar.small.fontLarge {
+  font-size: var(--font-sizes-large);
+}
+
+.avatar span {
+  transform: translateY(5%);
+}
+
+.avatar.medium {
+  height: var(--spacing-08);
+  font-size: var(--font-sizes-small);
+  width: var(--spacing-08);
+}
+
+.avatar.medium.fontLarge {
+  font-size: var(--font-sizes-normal);
+}
+
+.avatar.medium span {
+  transform: translateY(5%);
+}
+
+.avatar.small.fontLarge {
+  font-size: var(--font-sizes-small);
+}
+
+.avatar.small {
+  height: var(--spacing-06);
+  font-size: var(--font-sizes-tiny);
+  width: var(--spacing-06);
+}
+
+.avatar.small span {
+  transform: translateY(10%);
+}
+
+.avatar img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.avatar .icon {
+  height: 50%;
+  position: absolute;
+  width: 50%;
+}
+
+.avatar svg {
+  fill: currentColor;
+}
+
+.avatar.large .icon {
+  height: var(--spacing-05);
+  width: var(--spacing-05);
+}
+
+.avatar.gradient::before,
+.avatar.gradient::after {
+  border-radius: var(--radii-full);
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.avatar.gradient::before {
+  background-image: var(--colors-gradient-neutral-diagonal);
+  mix-blend-mode: soft-light;
+  opacity: var(--opacities-80);
+  z-index: 1;
+}

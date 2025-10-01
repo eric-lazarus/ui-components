@@ -1,0 +1,233 @@
+.light.modal .body {
+  background-color: var(--colors-neutral-light);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark50),
+    var(--shadows-blur-dark-medium-light);
+  color: var(--colors-neutral-dark);
+}
+
+.light.modal .notificationTop {
+  border-bottom: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark15);
+}
+
+.light.modal .btnDiv .button {
+  background-color: var(--colors-semi-transparent-light90);
+  box-shadow: var(--shadows-blur-dark-medium-light);
+}
+
+.dark.modal .body {
+  background-color: var(--colors-neutral-gray10);
+  color: var(--colors-neutral-gray90);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light7half),
+    var(--shadows-blur-light-medium);
+}
+
+.dark.modal .notificationTop {
+  border-bottom: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light15);
+}
+
+.dark.modal .btnDiv .button {
+  background-color: var(--colors-semi-transparent-dark40);
+  box-shadow: var(--shadows-blur-light-medium);
+}
+
+.modal {
+  inset: 0;
+  overscroll-behavior: contain;
+  position: fixed;
+  transition: all calc(1s * var(--durations-medium)),
+    opacity calc(1s * var(--durations-long));
+  z-index: 10;
+}
+
+.modal .outer,
+.modal .backdrop {
+  inset: 0;
+  position: fixed;
+  z-index: 8;
+}
+
+.modal .backdrop {
+  background-color: var(--colors-semi-transparent-dark50);
+  backdrop-filter: blur(var(--radii-large));
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.modal .wrapper {
+  box-sizing: border-box;
+  display: grid;
+  font-family: var(--font-families-stylized);
+  gap: var(--spacing-04);
+  grid-template-rows: calc(100% - var(--spacing-12) - var(--spacing-02)) auto;
+  height: 100vh;
+  left: 50%;
+  line-height: var(--line-heights-stylized);
+  max-height: calc(var(--spacing-64) * 2);
+  max-width: calc(var(--spacing-64) * 3);
+  overflow: hidden;
+  padding: var(--spacing-08);
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all calc(1s * var(--durations-medium)),
+    opacity calc(1s * var(--durations-medium));
+  width: 100%;
+  z-index: 10;
+}
+
+.modal.noButtons .wrapper {
+  grid-template-rows: 100%;
+}
+
+.modal button {
+  backdrop-filter: blur(0);
+  margin: 0;
+}
+
+.modal .body {
+  align-content: flex-start;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  position: relative;
+  transition: all calc(1s * var(--durations-long)),
+    opacity calc(1s * var(--durations-longer));
+}
+
+.modal.noHeader.showClose .body {
+  grid-template-rows: auto 1fr;
+}
+
+.modal.noHeader .body {
+  grid-template-rows: 1fr;
+}
+
+.modal .btnDiv {
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--spacing-04);
+  padding: 0;
+  width: 100%;
+}
+
+.modal .notificationTop {
+  align-items: center;
+  box-sizing: border-box;
+  display: grid;
+  min-height: calc(var(--spacing-12));
+  justify-content: center;
+  padding-bottom: var(--spacing-03);
+  padding-top: var(--spacing-03);
+  position: relative;
+}
+
+.modal .notificationTop .icon img,
+.modal .notificationTop .icon svg,
+.modal .notificationTop .icon {
+  height: var(--spacing-05);
+  width: auto;
+}
+
+.modal .notificationTop .icon svg {
+  fill: currentColor;
+}
+
+.modal .notificationTop .meta {
+  font-size: var(--font-sizes-small);
+  padding: 0;
+  position: absolute;
+  left: var(--spacing-04);
+  top: 50%;
+  transform: translateY(-45%);
+}
+
+.modal .close {
+  background-color: transparent;
+  backdrop-filter: blur(var(--radii-large));
+  height: var(--spacing-08);
+  left: auto;
+  right: var(--spacing-02);
+  top: var(--spacing-02);
+  transform: translate(0%, 0%);
+  width: var(--spacing-08);
+}
+
+@media screen and (max-width: 768px) {
+  .modal .close {
+    height: var(--spacing-06);
+    right: var(--spacing-03);
+    top: var(--spacing-03);
+    width: var(--spacing-06);
+  }
+}
+
+.modal.noHeader .close {
+  justify-self: end;
+  position: sticky;
+  right: 0;
+  top: 0;
+}
+
+.modal .content {
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-rows: min-content;
+  overflow-y: auto;
+  padding-bottom: var(--spacing-04);
+  padding-left: var(--spacing-04);
+  padding-right: var(--spacing-04);
+  padding-top: var(--spacing-04);
+  position: relative;
+}
+
+.modal.noHeader .content {
+  grid-template-rows: 1fr;
+  padding-bottom: var(--spacing-04);
+  padding-left: var(--spacing-04);
+  padding-right: var(--spacing-04);
+  padding-top: var(--spacing-04);
+}
+
+.modal.noHeader .contentInner {
+  display: grid;
+  padding-bottom: var(--spacing-02);
+  padding-left: var(--spacing-02);
+  padding-right: var(--spacing-02);
+  padding-top: var(--spacing-03);
+}
+
+.modal.noHeader.showClose .contentInner {
+  padding-right: var(--spacing-08);
+}
+
+.modal.slideOutRightCenter {
+  pointer-events: none;
+}
+
+.modal.slideOutRightCenter .wrapper {
+  opacity: var(--opacities-transparent);
+  pointer-events: none;
+
+  transition: all calc(1s * var(--durations-medium)),
+    opacity calc(1s * var(--durations-medium));
+  transform: translate(100%, -50%);
+}
+
+.modal.slideOutRightCenter .backdrop {
+  opacity: var(--opacities-transparent);
+}
+
+@media screen and (max-width: 768px) {
+  .modal .notificationTop img,
+  .modal .notificationTop svg,
+  .modal .notificationTop .icon {
+    height: var(--spacing-04);
+  }
+}

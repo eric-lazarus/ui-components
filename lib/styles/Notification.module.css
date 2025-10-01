@@ -1,0 +1,113 @@
+.light {
+  background-color: var(--colors-neutral-light);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark10);
+  box-shadow: var(--shadows-blur-dark-medium);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light10);
+  box-shadow: var(--shadows-blur-light-medium);
+  color: var(--colors-neutral-light);
+}
+
+.modal.dark {
+  box-shadow: var(--shadows-blur-light-medium);
+}
+
+.modal.light {
+  box-shadow: var(--shadows-blur-dark-medium-heavy);
+}
+
+.notification {
+  display: grid;
+  gap: var(--spacing-02);
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-small);
+  justify-content: stretch;
+  line-height: var(--line-heights-stylized);
+  opacity: var(--opacities-transparent);
+  padding: var(--spacing-04);
+  position: fixed;
+  right: calc(-2 * var(--spacing-04) - var(--spacing-64));
+  top: var(--spacing-04);
+  transition: all calc(1s * var(--durations-medium));
+  transform: translateX(0%);
+  width: var(--spacing-64);
+  z-index: 98;
+}
+
+.notification button {
+  margin-bottom: 0;
+}
+
+.slideInRight {
+  transform: translateX(calc(-100% + -1 * var(--spacing-04)));
+  opacity: var(--opacities-opaque);
+}
+
+.modal.slideInRightCenter {
+  transform: translate(50%, -50%);
+  right: 50%;
+  opacity: var(--opacities-opaque);
+}
+
+.modal {
+  right: 0;
+  top: 50%;
+  transform: translate(100%, -50%);
+}
+
+.modal button {
+  margin-top: var(--spacing-04);
+}
+
+.btnDiv {
+  display: flex;
+}
+
+.notification p {
+  margin: 0;
+  opacity: var(--opacities-80);
+}
+
+.notificationTop {
+  display: grid;
+  gap: var(--spacing-02);
+  grid-auto-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.notificationTop img,
+.notificationTop svg {
+  display: block;
+  height: var(--spacing-05);
+}
+
+.notificationTop svg:not([fill]) {
+  fill: currentColor;
+}
+
+.notificationTop p {
+  font-size: var(--font-sizes-small);
+  margin-bottom: 0;
+  margin-top: var(--spacing-00half);
+}
+
+.backdrop {
+  background-color: var(--colors-semi-transparent-dark50);
+  backdrop-filter: blur(var(--radii-large));
+  inset: 0;
+  position: fixed;
+  transition: all calc(1s * var(--durations-medium));
+  z-index: 8;
+}
+
+.backdrop.slideOutRightCenter {
+  opacity: var(--opacities-transparent);
+  pointer-events: none;
+}

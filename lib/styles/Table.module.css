@@ -1,0 +1,145 @@
+.table {
+  background-color: var(--table-bg-color);
+  border-radius: var(--radii-rounded);
+  box-sizing: border-box;
+  color: var(--table-fg-color);
+  display: grid;
+  gap: 0;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content calc(100% - 55px);
+  overflow: hidden;
+  padding: 0;
+  transition: all calc(1s * var(--durations-medium));
+  width: 100%;
+}
+
+.light {
+  --table-fg-color: var(--colors-neutral-dark);
+  --table-bg-color: var(--colors-semi-transparent-light80);
+  --table-accent-color: var(--colors-semi-transparent-dark10);
+  --table-accent-color-light: var(--colors-semi-transparent-dark2half);
+  --table-accent-color-dark: var(--colors-neutral-gray85);
+  --table-accent-color-alt: var(--colors-neutral-light);
+  --table-success-color: var(--colors-brand-state-success-contrast-light);
+  --table-warning-color: var(--colors-brand-state-warn-contrast-light);
+  --table-error-color: var(--colors-brand-state-error-contrast-light);
+  --table-entry-border-color: var(--colors-semi-transparent-light80);
+}
+
+.dark {
+  --table-fg-color: var(--colors-neutral-light);
+  --table-bg-color: var(--colors-neutral-dark);
+  --table-accent-color: var(--colors-semi-transparent-light10);
+  --table-accent-color-light: var(--colors-semi-transparent-light5);
+  --table-accent-color-dark: var(--colors-neutral-gray30);
+  --table-accent-color-alt: var(--colors-neutral-dark);
+  --table-success-color: var(--colors-brand-state-success-contrast-dark);
+  --table-warning-color: var(--colors-brand-state-warn-contrast-dark);
+  --table-error-color: var(--colors-brand-state-error-contrast-dark);
+  --table-entry-border-color: var(--colors-neutral-dark);
+}
+
+.tableEntry:hover {
+  background-color: var(--table-accent-color-light);
+  box-shadow: inset calc(var(--border-widths-small)) 0 0 0
+      var(--table-accent-color-dark),
+    inset calc(-1 * var(--border-widths-normal)) 0 0 0
+      var(--table-accent-color-dark),
+    inset 0 calc(-1 * var(--border-widths-small)) 0 0
+      var(--table-accent-color-dark),
+    0 calc(-1 * var(--border-widths-small)) 0 0 var(--table-accent-color-dark);
+}
+
+.selected {
+  border: 1px solid #FFF000 !important; /* rikai yellow */
+}
+
+[data-status='success'],
+[data-status='Success'],
+[data-status='SUCCESS'] {
+  color: var(--table-success-color);
+}
+
+[data-status='failure'],
+[data-status='Failure'],
+[data-status='FAILURE'],
+[data-status='error'],
+[data-status='Error'],
+[data-status='ERROR'] {
+  color: var(--table-error-color);
+}
+
+[data-status='warning'],
+[data-status='Warning'],
+[data-status='WARNING'],
+[data-status='warn'],
+[data-status='Warn'],
+[data-status='WARN'] {
+  color: var(--table-warning-color);
+}
+
+.tableEl {
+  align-content: flex-start;
+  border-spacing: 0;
+  display: grid;
+  height: 100%;
+}
+
+.title {
+  font-size: var(--font-sizes-medium);
+  padding-bottom: var(--spacing-03);
+  padding-left: var(--spacing-04);
+  padding-right: var(--spacing-04);
+  padding-top: var(--spacing-04);
+}
+
+.tableHeader {
+  display: block;
+  box-sizing: border-box;
+  margin-right: var(--border-widths-normal);
+  padding-bottom: var(--spacing-01);
+  padding-right: calc(var(--spacing-02half) + var(--spacing-00half));
+}
+
+.tableHeader tr {
+  gap: var(--spacing-02);
+}
+
+.tableContent {
+  border-top: var(--border-widths-normal) solid var(--table-accent-color);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-bottom: var(--border-widths-normal);
+  margin-right: var(--border-widths-normal);
+  overflow: auto;
+  overflow-y: scroll;
+  padding-bottom: var(--spacing-02);
+  padding-top: var(--spacing-02);
+}
+
+.tableEntry,
+tr {
+  padding-left: var(--spacing-04);
+  padding-right: var(--spacing-04);
+}
+
+.tableEntry {
+  align-items: center;
+  gap: var(--spacing-02);
+  padding-bottom: var(--spacing-01half);
+  padding-top: var(--spacing-01half);
+  transition: all calc(1s * var(--durations-short));
+  border: 1px solid var(--table-entry-border-color);
+}
+
+.tableEntry > * {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.searchBox {
+  border-left: none;
+  width: 90%;
+}

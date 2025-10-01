@@ -1,0 +1,135 @@
+.light {
+  background-color: var(--colors-neutral-light);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark10);
+  box-shadow: var(--shadows-blur-dark-small-light);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light10);
+  box-shadow: var(--shadows-blur-light-small);
+  color: var(--colors-neutral-light);
+}
+
+.light:hover {
+  box-shadow: var(--shadows-blur-dark-medium-light);
+}
+
+.dark:hover {
+  box-shadow: var(--shadows-blur-light-medium);
+}
+
+.patientHeader.dark .sharePatientBtn {
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light20);
+  box-shadow: var(--shadows-blur-light-small);
+}
+
+.patientHeader.dark .sharePatientBtn:hover {
+  box-shadow: var(--shadows-blur-light-small-heavy);
+}
+
+.patientHeader.light .sharePatientBtn {
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark20);
+  box-shadow: var(--shadows-blur-dark-small-light);
+}
+
+.patientHeader.light .sharePatientBtn:hover {
+  box-shadow: var(--shadows-blur-dark-small);
+}
+.patientHeader.dark .imageDiv {
+  background-color: var(--colors-semi-transparent-light10);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-light15);
+}
+
+.patientHeader.light .imageDiv {
+  background-color: var(--colors-semi-transparent-dark5);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-semi-transparent-dark7half);
+}
+
+.patientHeader {
+  align-items: center;
+  border-radius: var(--radii-full) 0 0 var(--radii-full);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: grid;
+  font-family: var(--font-families-stylized);
+  gap: var(--spacing-02half);
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto auto auto;
+  line-height: var(--line-heights-stylized);
+  margin-bottom: 1em;
+  padding: var(--spacing-01) var(--spacing-04) var(--spacing-01)
+    var(--spacing-01);
+  position: fixed;
+  transition: calc(1s * var(--durations-medium));
+  width: 100%;
+  z-index: 1;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.patientHeader p {
+  margin: 0;
+}
+
+.patientHeader .infoDiv p:first-child {
+  font-size: var(--font-sizes-tiny);
+  opacity: var(--opacities-80);
+}
+
+.patientHeader .sharePatientBtn {
+  align-items: center;
+  border-radius: var(--radii-full);
+  box-sizing: border-box;
+  display: flex;
+  font-size: var(--font-sizes-small);
+  padding: var(--spacing-01half) var(--spacing-02half);
+  transition: calc(1s * var(--durations-medium));
+}
+
+.patientHeader .sharePatientBtn svg {
+  fill: currentColor;
+  height: var(--spacing-04);
+  width: auto;
+}
+
+.patientHeader .nameDiv,
+.patientHeader .infoDiv {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-00half);
+  justify-content: center;
+}
+
+.patientHeader .fontMedium {
+  font-size: var(--font-sizes-normal);
+}
+
+@media screen and (max-width: 768px) {
+  .patientHeader {
+    padding: var(--spacing-02);
+  }
+
+  .patientHeader .fontMedium {
+    font-size: var(--font-sizes-small);
+  }
+
+  .patientHeader .infoDiv {
+    margin-top: var(--spacing-00half);
+  }
+
+  .patientHeader > button {
+    height: var(--spacing-08);
+    min-width: var(--spacing-08);
+    width: var(--spacing-08);
+  }
+}

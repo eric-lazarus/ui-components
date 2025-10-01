@@ -1,0 +1,224 @@
+.light {
+  color: var(--colors-neutral-gray5);
+}
+
+.dark {
+  color: var(--colors-neutral-light);
+}
+
+.focus.dark .inputBox {
+  border-color: var(--colors-brand-bright-green);
+}
+
+.dark .label {
+  color: var(--colors-brand-bright-green);
+}
+
+.dark .inputBox {
+  border-color: var(--colors-semi-transparent-light30);
+}
+
+.dark .info {
+  color: var(--colors-neutral-gray60);
+}
+
+.dark option {
+  background-color: var(--colors-neutral-gray20);
+}
+
+.light .label {
+  color: var(--colors-brand-atlantic);
+}
+
+.focus.light .inputBox {
+  border-color: var(--colors-brand-atlantic);
+}
+
+.light .inputBox {
+  border-color: var(--colors-semi-transparent-dark30);
+}
+
+.light .info {
+  color: var(--colors-neutral-gray40);
+}
+
+.input.disabled {
+  cursor: not-allowed;
+  opacity: var(--opacities-40);
+  pointer-events: all;
+}
+
+.input.input.disabled input {
+  cursor: inherit;
+}
+
+.input {
+  font-family: var(--font-families-stylized), monospace;
+  font-size: var(--font-sizes-small);
+  display: grid;
+  gap: var(--spacing-02);
+  margin-bottom: var(--spacing-04);
+  pointer-events: none;
+}
+
+.input button {
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  line-height: 1;
+  padding: 0;
+}
+
+.input.type1,
+.input.type2 {
+  cursor: text;
+}
+
+.inputBox {
+  align-items: flex-start;
+  border-bottom: solid var(--border-widths-normal);
+  border-left: solid var(--border-widths-normal);
+  border-right: none;
+  border-top: none;
+  box-sizing: border-box;
+  color: inherit;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
+  justify-content: space-between;
+  min-height: calc(var(--spacing-08) + var(--spacing-01));
+  padding: 0;
+  pointer-events: all;
+  position: relative;
+  transition: all calc(1s * var(--durations-medium));
+  width: 100%;
+}
+
+.type3 .inputBox {
+  grid-template-columns: auto auto;
+}
+
+.type3 .inputBox select {
+  appearance: none;
+  inset: 0 0 0 var(--spacing-04);
+  line-height: 1.2em;
+  margin: 0;
+  position: absolute;
+  width: calc(100% - var(--spacing-04));
+}
+
+.type3.iconLeft .inputBox select {
+  padding-left: calc(var(--spacing-04));
+  margin-left: 0;
+}
+
+.type2 .inputBox,
+.type2.iconRight .inputBox {
+  padding-right: 0;
+}
+
+.type2 .inputBox textarea {
+  margin-right: 0;
+}
+
+.type2 .inputBox .icon:last-child {
+  position: absolute;
+  right: var(--spacing-02);
+}
+
+.iconLeft .inputBox {
+  padding-left: var(--spacing-02);
+}
+
+.iconRight .inputBox,
+.type3 .inputBox {
+  padding-right: var(--spacing-02);
+}
+
+.inputBox .icon {
+  pointer-events: none;
+}
+
+.inputBox .icon > * {
+  max-height: var(--spacing-04);
+  width: var(--spacing-04);
+}
+
+.inputBox svg {
+  fill: currentColor;
+}
+
+@media (max-width: 768px) {
+  .inputBox .icon,
+  .inputBox .icon > * {
+    max-height: var(--spacing-03);
+    width: var(--spacing-03);
+  }
+
+  .inputBox {
+    min-height: calc(var(--spacing-08));
+  }
+}
+
+.inputBox .icon {
+  margin-top: calc(var(--spacing-01) + var(--spacing-001pixel));
+  opacity: var(--opacities-60);
+  position: relative;
+  transition: all calc(1s * var(--durations-medium));
+  z-index: 1;
+}
+
+.focus .inputBox .icon,
+.submit .inputBox .icon.right {
+  opacity: var(--opacities-opaque);
+}
+
+.submit .inputBox .icon.right {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.inputBox input,
+.inputBox textarea,
+.inputBox select {
+  background-color: transparent;
+  border: none;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  font-size: var(--font-sizes-normal);
+  margin: 0 var(--spacing-02);
+  min-width: 4.25rem;
+  padding: var(--spacing-02) 0;
+  line-height: 1.2em !important;
+}
+
+.inputBox select:invalid {
+  opacity: var(--opacities-40);
+}
+
+.inputBox textarea {
+  max-width: 100%;
+  min-height: var(--spacing-20);
+  resize: vertical;
+}
+
+.defaultTextArea {
+  height: var(--spacing-20);
+}
+
+.inputBox input:focus,
+.inputBox select:focus,
+.inputBox textarea:focus {
+  outline: none;
+}
+
+.info {
+  font-size: var(--font-sizes-tiny);
+}
+
+.inputBox *::placeholder {
+  color: inherit;
+  opacity: var(--opacities-40);
+}

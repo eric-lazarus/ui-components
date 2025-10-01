@@ -1,0 +1,195 @@
+.tab {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-grid;
+  gap: var(--spacing-03);
+  font-family: var(--font-families-stylized), monospace;
+  font-size: var(--font-sizes-small);
+  font-weight: var(--font-weights-regular);
+  justify-content: center;
+  line-height: var(--spacing-04);
+  margin: 0;
+  min-height: var(--spacing-12);
+  padding-bottom: var(--spacing-02);
+  padding-left: var(--spacing-04);
+  padding-right: var(--spacing-04);
+  padding-top: var(--spacing-02);
+  position: relative;
+  text-decoration: none;
+  transition: all calc(1s * var(--durations-medium));
+  width: max-content;
+}
+
+.tab[disabled] {
+  cursor: not-allowed;
+  filter: saturate(0.5);
+  opacity: var(--opacities-60);
+}
+
+@media screen and (max-width: 767px) {
+  .tab {
+    min-height: var(--spacing-10);
+  }
+}
+
+.light {
+  background-color: var(--colors-neutral-light);
+  box-shadow: var(--shadows-blur-dark-medium-light),
+    inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-dark2half);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  background-color: var(--colors-neutral-gray15);
+  box-shadow: var(--shadows-blur-light-medium),
+    inset 0 0 0 var(--border-widths-normal)
+      var(--colors-semi-transparent-light5);
+  color: var(--colors-neutral-light);
+}
+
+.light .tab {
+  background-color: var(--colors-semi-transparent-dark2half);
+  box-shadow: 0 var(--border-widths-normal) 0 0
+    var(--colors-semi-transparent-dark10);
+}
+
+.dark .tab {
+  background-color: var(--colors-semi-transparent-light5);
+  box-shadow: 0 var(--border-widths-normal) 0 0
+    var(--colors-semi-transparent-light20);
+}
+
+.light .active.tab-1::after,
+.light .active.tab-primary::after {
+  background-color: var(--colors-brand-atlantic);
+  opacity: var(--opacities-opaque);
+}
+
+.light .active.tab-2::after,
+.light .active.tab-secondary::after {
+  background-color: var(--colors-brand-metallic-blue);
+  opacity: var(--opacities-60);
+}
+
+.dark .active.tab-1::after,
+.dark .active.tab-primary::after {
+  background-color: var(--colors-brand-bright-green);
+  opacity: var(--opacities-opaque);
+}
+
+.dark .active.tab-2::after,
+.dark .active.tab-secondary::after {
+  background-color: var(--colors-brand-light-blue);
+  opacity: var(--opacities-80);
+}
+
+.active.tab {
+  background-color: transparent;
+}
+
+.tabContainer {
+  display: grid;
+  grid-template-rows: min-content calc(100% - var(--spacing-10));
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .tabContainer {
+    grid-template-rows: min-content calc(100% - var(--spacing-12));
+  }
+}
+
+.tabContent {
+  width: 100%;
+}
+
+.tabBar {
+  height: var(--spacing-10);
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .tabBar {
+    height: var(--spacing-12);
+  }
+}
+
+.tab .icon,
+.tab svg {
+  height: var(--spacing-04);
+  width: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .tab .icon,
+  .tab svg {
+    height: var(--spacing-03half);
+    width: auto;
+  }
+}
+
+.tabMultiSelect {
+  cursor: not-allowed;
+  opacity: var(--opacities-40);
+}
+.tab svg {
+  fill: currentColor;
+}
+
+.tab.iconEdge {
+  padding-left: var(--spacing-12);
+  padding-right: var(--spacing-12);
+}
+
+.tab.iconLeft.iconEdge .icon {
+  left: var(--spacing-04);
+  position: absolute;
+}
+
+.tab.iconRight.iconEdge .icon {
+  right: var(--spacing-04);
+  position: absolute;
+}
+
+.tab span {
+  transition: all calc(1s * var(--durations-medium));
+  width: max-content;
+}
+
+.tab::after {
+  bottom: 0;
+  content: '';
+  height: calc(var(--border-widths-medium));
+  left: 0;
+  opacity: var(--opacities-transparent);
+  position: absolute;
+  right: 0;
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.tab.active {
+  position: absolute;
+}
+
+.animated {
+  animation: fadeIn calc(1s * var(--durations-longer));
+}
+
+.tabContent {
+  overflow: auto;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: var(--opacities-transparent);
+  }
+  100% {
+    opacity: var(--opacities-opaque);
+  }
+}

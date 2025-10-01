@@ -1,0 +1,135 @@
+.light {
+  color: var(--colors-neutral-dark);
+}
+
+.light.mainHeader {
+  background-color: var(--colors-neutral-light);
+  box-shadow: inset 0 calc(-1 * var(--border-widths-normal))
+      var(--colors-semi-transparent-dark15),
+    0 var(--border-widths-medium) 0 0 var(--colors-semi-transparent-dark5);
+  color: var(--colors-neutral-dark);
+}
+
+.light .textMuted {
+  color: var(--colors-brand-atlantic) !important;
+}
+
+.light .textBright {
+  color: var(--colors-brand-burnt-orange) !important;
+}
+
+.light .textGray {
+  color: var(--colors-neutral-gray50) !important;
+}
+
+.dark.mainHeader {
+  background: var(--colors-neutral-gray20);
+  box-shadow: inset 0 calc(-1 * var(--border-widths-normal))
+      var(--colors-semi-transparent-light10),
+    0 var(--border-widths-medium) 0 0 var(--colors-semi-transparent-dark10);
+}
+
+.dark {
+  color: var(--colors-neutral-light);
+}
+
+.dark .textMuted {
+  color: var(--colors-brand-light-blue) !important;
+}
+
+.dark .textBright {
+  color: var(--colors-brand-bright-orange) !important;
+}
+
+.dark .textGray {
+  color: var(--colors-neutral-gray70) !important;
+}
+
+.mainHeader {
+  align-items: center;
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--spacing-02);
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  height: var(--spacing-12);
+  padding-left: var(--spacing-01);
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.mainHeader h2 {
+  margin: 0;
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-medium);
+  font-weight: var(--font-weights-regular);
+  padding-top: var(--spacing-01);
+  padding-left: var(--spacing-05);
+}
+
+.mainHeader .headerNotes {
+  display: grid;
+  gap: var(--spacing-02);
+  grid-auto-flow: column;
+  cursor: pointer;
+}
+
+.mainHeader .changeLogNotesStart {
+  margin-left: 0;
+}
+
+.mainHeader .scrollTextArea {
+  display: grid;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  border-left: var(--border-widths-normal) solid
+    var(--colors-semi-transparent-gray50);
+}
+
+.mainHeader .extraNotes {
+  animation: scrolling-animation infinite linear;
+  display: grid;
+  white-space: nowrap;
+  position: relative;
+  right: 0vw;
+}
+
+.version {
+  display: grid;
+  gap: var(--spacing-04);
+  white-space: pre-wrap;
+}
+
+.version ul {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .mainHeader .extraNotes {
+    display: none;
+  }
+
+  .mainHeader .changeLogNotesStart {
+    position: absolute;
+    right: var(--spacing-06);
+    top: var(--spacing-04);
+  }
+
+  .mainHeader .scrollTextArea {
+    border-left: none;
+  }
+}
+
+@keyframes scrolling-animation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

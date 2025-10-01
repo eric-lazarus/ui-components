@@ -1,0 +1,85 @@
+.light {
+  background-color: var(--colors-neutral-dark);
+  border: solid var(--border-widths-small)
+    var(--colors-semi-transparent-light50);
+  box-shadow: var(--shadows-blur-dark-small);
+  color: var(--colors-neutral-light);
+}
+
+.dark {
+  background-color: var(--colors-neutral-light);
+  border: solid var(--border-widths-small) var(--colors-semi-transparent-dark50);
+  box-shadow: var(--shadows-blur-light-small-heavy);
+  color: var(--colors-neutral-dark);
+}
+
+.light:hover {
+  box-shadow: var(--shadows-blur-dark-medium);
+}
+
+.dark:hover {
+  box-shadow: var(--shadows-blur-light-medium-heavy);
+}
+
+.light .labelContainer {
+  color: var(--colors-neutral-dark);
+}
+
+.dark .labelContainer {
+  color: var(--colors-neutral-light);
+}
+
+.floatingButton {
+  align-items: center;
+  border-radius: var(--radii-full);
+  bottom: var(--spacing-06);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-families-stylized);
+  height: var(--spacing-12);
+  justify-content: center;
+  line-height: var(--line-heights-stylized);
+  margin: 0;
+  position: absolute;
+  right: var(--spacing-06);
+  transition: all calc(1s * var(--durations-medium));
+  width: var(--spacing-12);
+}
+
+.buttonText {
+  font-size: var(--font-sizes-medium);
+  padding-top: var(--spacing-00half);
+}
+
+.dark:focus {
+  outline: solid var(--border-widths-small)
+    var(--colors-semi-transparent-light20);
+}
+
+.light:focus {
+  outline: solid var(--border-widths-small)
+    var(--colors-semi-transparent-dark10);
+}
+
+.labelContainer {
+  cursor: default;
+  font-size: var(--font-sizes-small);
+  left: 0;
+  min-width: var(--spacing-12);
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(calc(-1 * 100% - var(--spacing-03)));
+  text-align: right;
+}
+
+.floatingButton img,
+.floatingButton i {
+  height: 60%;
+  width: 60%;
+}
+
+.floatingButton svg {
+  fill: currentColor;
+}

@@ -1,0 +1,35 @@
+.light {
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  color: var(--colors-neutral-light);
+}
+
+.MultiSelect {
+  display: grid;
+  font-family: var(--font-families-stylized);
+  font-size: var(--font-sizes-small);
+  gap: var(--spacing-02);
+  width: 100%;
+}
+
+.MultiSelect p {
+  margin: 0;
+}
+
+.MultiSelect button {
+  margin: 0;
+}
+
+.buttonDiv {
+  display: flex;
+  gap: var(--spacing-04);
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .buttonDiv {
+    flex-direction: column;
+  }
+}

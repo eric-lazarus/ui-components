@@ -1,0 +1,245 @@
+.inputMulti.light {
+  color: var(--colors-neutral-dark);
+}
+
+.inputMulti.light .info {
+  color: var(--colors-neutral-gray40);
+}
+
+.inputMulti.dark {
+  color: var(--colors-brand-light-blue);
+}
+
+.inputMulti.dark .info {
+  color: var(--colors-neutral-gray60);
+}
+
+.inputMulti.light .control,
+.inputMulti.light .controlFocused,
+.inputMulti.light .multiValue {
+  background-color: var(--colors-brand-neutral-tint);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark20);
+}
+
+.inputMulti.dark .control,
+.inputMulti.dark .controlFocused,
+.inputMulti.dark .multiValue {
+  background-color: var(--colors-neutral-gray15);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light20);
+}
+
+.inputMulti.light .control:hover,
+.inputMulti.light .controlFocused:hover,
+.inputMulti.light .controlFocused {
+  border-color: var(--colors-brand-atlantic) !important;
+}
+
+.inputMulti.dark .control:hover,
+.inputMulti.dark .controlFocused:hover,
+.inputMulti.dark .controlFocused {
+  border-color: var(--colors-brand-blue-gray) !important;
+}
+
+.inputMulti.light .option {
+  border-color: var(--colors-semi-transparent-dark7half);
+  color: var(--colors-neutral-gray50);
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.inputMulti.dark .option {
+  border-color: var(--colors-semi-transparent-light15);
+  color: var(--colors-neutral-gray60);
+  transition: all calc(1s * var(--durations-medium));
+}
+
+.inputMulti.light .optionActive,
+.inputMulti.light .optionActive:active,
+.inputMulti.light .option:active {
+  background-color: var(--colors-semi-transparent-dark5);
+  color: var(--colors-neutral-dark);
+}
+
+.inputMulti.dark .optionActive,
+.inputMulti.dark .optionActive:active,
+.inputMulti.dark .option:active {
+  background-color: var(--colors-semi-transparent-light10);
+  color: var(--colors-neutral-light);
+}
+
+.inputMulti.light .label {
+  color: var(--colors-brand-atlantic);
+}
+
+.inputMulti.dark .label {
+  color: var(--colors-brand-bright-green);
+}
+
+.inputMulti.light .menu {
+  background-color: var(--colors-semi-transparent-light50);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark7half);
+  box-shadow: var(--shadows-blur-dark-medium-light555);
+}
+
+.inputMulti.dark .menu {
+  background-color: var(--colors-semi-transparent-dark80);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light30);
+  box-shadow: var(--shadows-blur-light-medium-light);
+}
+
+.inputMulti {
+  align-items: flex-end;
+  display: grid;
+  gap: var(--spacing-01half);
+  margin-bottom: var(--spacing-04);
+  width: 100%;
+}
+
+.inputMulti .control,
+.inputMulti .controlFocused {
+  border-radius: var(--radii-full);
+  box-shadow: none;
+  margin-bottom: var(--spacing-00half);
+  min-height: var(--spacing-10);
+  padding: var(--spacing-01) var(--spacing-02) var(--spacing-01)
+    var(--spacing-03half);
+  transition: all calc(1s * var(--durations-medium));
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .inputMulti .control,
+  .inputMulti .controlFocused {
+    min-height: calc(var(--spacing-08) + var(--spacing-01));
+  }
+}
+
+.indicatorsContainer > div,
+.indicatorsContainer > div:hover {
+  color: inherit;
+  padding: var(--spacing-01) var(--spacing-01half);
+}
+
+.inputMulti .input,
+.inputMulti .placeholder,
+.inputMulti .singleValue {
+  color: inherit;
+  grid-area: 1/2;
+}
+
+.inputMulti .input {
+  color: inherit;
+}
+
+.inputMulti .multiValue {
+  align-items: center;
+  background-color: transparent;
+  border-radius: var(--radii-full);
+  margin: 0;
+  padding: 0 var(--spacing-01) 0 var(--spacing-02half);
+}
+
+.inputMulti .multiValue div {
+  color: inherit;
+}
+
+.inputMulti .multiValue div:last-child {
+  padding: var(--spacing-01);
+}
+
+.inputMulti .info {
+  font-size: var(--font-sizes-tiny);
+}
+
+.inputMulti .multiValue > * {
+  padding: 0;
+}
+
+.inputMulti .icon,
+.inputMulti .multiValue .icon,
+.inputMulti .controlFocused .multiValue .icon {
+  transition: all calc(1s * var(--durations-medium));
+  opacity: var(--opacities-50);
+}
+
+.inputMulti .controlFocused .icon,
+.inputMulti .icon:hover,
+.inputMulti .controlFocused .valueContainer > .icon,
+.inputMulti .multiValue div:last-child:hover .icon {
+  opacity: var(--opacities-90);
+}
+
+.inputMulti .multiValue div:last-child:hover {
+  background-color: transparent;
+}
+
+.inputMulti .valueContainer {
+  justify-content: start;
+  gap: var(--spacing-01half);
+  padding: 0;
+}
+
+.inputMulti svg {
+  fill: currentColor;
+  max-width: var(--spacing-04);
+}
+
+.inputMulti .icon svg {
+  display: block;
+  margin-right: var(--spacing-01);
+  max-height: var(--spacing-04);
+  max-width: var(--spacing-04);
+}
+
+@media screen and (max-width: 768px) {
+  .inputMulti .icon svg {
+    max-height: var(--spacing-03half);
+    max-width: var(--spacing-03half);
+  }
+}
+
+.inputMulti .placeholder {
+  color: inherit;
+  opacity: var(--opacities-40);
+}
+
+.inputMulti .hidden {
+  display: none;
+}
+
+.inputMulti .label {
+  font-size: var(--font-sizes-small);
+}
+
+.inputMulti .menu {
+  backdrop-filter: blur(var(--radii-huge));
+  border-radius: var(--radii-rounded);
+  overflow: hidden;
+  padding: 0;
+  z-index: 2;
+}
+
+.inputMulti .menuList {
+  padding: 0;
+}
+
+.disabled {
+  color: var(--colors-neutral-gray50);
+  cursor: not-allowed;
+}
+
+.option,
+.optionActive {
+  border-bottom: solid var(--border-widths-normal);
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.option {
+  background-color: transparent;
+}

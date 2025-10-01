@@ -1,0 +1,18 @@
+.meter {
+  background-color: var(--colors-neutral-gray40);
+  box-shadow: var(--shadows-blur-light-medium-heavy),
+    var(--shadows-blur-dark-medium);
+  height: var(--spacing-03half);
+  position: relative;
+  width: 100%;
+}
+
+.meter > div {
+  background-color: var(--colors-brand-bright-blue);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-neutral-gray40);
+  height: var(--spacing-03half);
+  left: 0;
+  position: absolute;
+  top: 0;
+}

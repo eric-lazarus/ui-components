@@ -1,0 +1,312 @@
+.light {
+  --zoom-thumb-color: var(--colors-neutral-gray80);
+  --zoom-thumb-border-color: var(--colors-semi-transparent-dark20);
+  --zoom-bg-color: var(--colors-semi-transparent-dark2half);
+  --zoom-bg-border-opacity: var(--opacities-10);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  --zoom-thumb-color: var(--colors-neutral-gray40);
+  --zoom-thumb-border-color: var(--colors-semi-transparent-light50);
+  --zoom-bg-color: var(--colors-semi-transparent-light5);
+  --zoom-bg-border-opacity: var(--opacities-20);
+  color: var(--colors-neutral-light);
+}
+
+.light.isOverlay {
+  --zoom-bg-color: hsla(0, 0%, 75%, 0.8);
+  --zoom-thumb-border-color: var(--colors-semi-transparent-dark50);
+}
+
+.dark.isOverlay {
+  --zoom-bg-color: hsla(0, 0%, 25%, 0.8);
+  --zoom-thumb-border-color: var(--colors-semi-transparent-light80);
+}
+
+.slider {
+  align-items: center;
+  display: inline-grid;
+  grid-template-columns: 100%;
+  justify-content: stretch;
+  margin-bottom: var(--spacing-04);
+  width: 100%;
+}
+
+.sliderInner {
+  display: flex;
+  gap: var(--spacing-01);
+  position: relative;
+  width: 100%;
+}
+
+.sliderInner i {
+  animation: none;
+  background-color: var(--zoom-bg-color);
+  backdrop-filter: blur(var(--radii-large));
+  border-radius: var(--radii-small);
+  fill: currentColor;
+  height: var(--spacing-03half);
+  margin: calc(var(--spacing-01)) 0;
+  max-width: var(--spacing-03half);
+  min-width: var(--spacing-03half);
+}
+
+.backgroundWrapper {
+  position: absolute;
+  inset: 0 var(--spacing-05);
+  overflow: hidden;
+}
+
+.background::before {
+  content: '';
+  inset: 0;
+  opacity: var(--zoom-bg-border-opacity);
+  position: absolute;
+  width: 100%;
+}
+
+.sliderInput {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  background: none;
+  height: var(--spacing-06); /* Specified height */
+  outline: none; /* Remove outline */
+  margin: 0 calc(var(--border-widths-normal));
+  position: relative;
+  transition: opacity calc(1s * var(--durations-medium));
+  width: 100%; /* Full-width */
+  z-index: 1;
+}
+
+.sliderInput::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: var(--spacing-03); /* Set a specific slider handle width */
+  /* height: 30px; Slider handle height */
+  height: var(--spacing-06);
+  background: var(--zoom-thumb-color);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--zoom-thumb-border-color);
+  box-sizing: border-box;
+  border-radius: var(--radii-rounded);
+  border: none;
+  /* margin-bottom: 5px; */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.sliderInput::-moz-range-thumb {
+  width: var(--spacing-03); /* Set a specific slider handle width */
+  height: var(--spacing-06); /* Slider handle height */
+  background: var(--zoom-thumb-color);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--zoom-thumb-border-color);
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer; /* Cursor on hover */
+}
+
+.type1,
+.type2,
+.type3,
+.type4 {
+  max-width: var(--spacing-56);
+}
+
+.type5.slider,
+.type6.slider,
+.type7.slider,
+.type8.slider {
+  height: var(--spacing-48);
+  justify-content: center;
+  justify-items: center;
+  width: var(--spacing-08);
+}
+
+.type5 .sliderInner,
+.type6 .sliderInner,
+.type7 .sliderInner,
+.type8 .sliderInner {
+  height: var(--spacing-06);
+  transform: rotate(90deg);
+  width: var(--spacing-48);
+}
+
+.type5.slider i,
+.type6.slider i,
+.type8.slider i {
+  transform: rotate(90deg);
+}
+
+.background {
+  /* backdrop-filter: blur(var(--radii-large)); */
+  background-color: var(--zoom-bg-color);
+  position: absolute;
+}
+
+.type1 .sliderInner,
+.type5 .sliderInner {
+  align-items: center;
+}
+
+.type1 .background,
+.type5 .background {
+  border-radius: var(--radii-rounded);
+  inset: var(--spacing-02) 0 var(--spacing-02) 0%;
+  width: 100%;
+}
+
+.type1 .background::before,
+.type5 .background::before {
+  border: solid calc(1.5 * var(--border-widths-normal));
+  border-radius: var(--radii-rounded);
+  box-sizing: border-box;
+}
+
+.type2 .background,
+.type6 .background {
+  inset: var(--spacing-01) 0 var(--spacing-01) -10%;
+  width: 110%;
+  clip-path: polygon(0 50%, 100% 0%, 100% 100%);
+}
+
+.type2 .background::before,
+.type6 .background::before {
+  background-image: linear-gradient(
+      to top right,
+      transparent,
+      50%,
+      currentColor,
+      50%,
+      currentColor,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent
+    ),
+    linear-gradient(
+      to bottom right,
+      transparent,
+      50%,
+      currentColor,
+      50%,
+      currentColor,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent
+    ),
+    linear-gradient(
+      to left,
+      currentColor,
+      0%,
+      currentColor,
+      calc(0% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(1.25 * var(--border-widths-normal)),
+      transparent
+    );
+
+  background-position: bottom, top;
+  background-repeat: no-repeat;
+  background-size: 100% 50%, 100% 50%, 100%, 100%;
+}
+
+.type3 .background,
+.type7 .background {
+  inset: var(--spacing-01) 0 var(--spacing-01) -10%;
+  width: 110%;
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%);
+}
+
+.type3 .background::before,
+.type7 .background::before {
+  background-image: linear-gradient(
+      to top right,
+      transparent,
+      50%,
+      currentColor,
+      50%,
+      currentColor,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent
+    ),
+    linear-gradient(
+      to left,
+      currentColor,
+      0%,
+      currentColor,
+      calc(0% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(1.25 * var(--border-widths-normal)),
+      transparent
+    ),
+    linear-gradient(
+      to bottom,
+      currentColor,
+      0%,
+      currentColor,
+      calc(0% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(1.25 * var(--border-widths-normal)),
+      transparent
+    );
+}
+
+.type3 .sliderInner {
+  align-items: flex-start;
+}
+
+.type7.slider i {
+  transform: rotate(90deg) translate(calc(-1 * var(--spacing-01)), 0) !important;
+}
+
+.type4 .sliderInner,
+.type8 .sliderInner {
+  align-items: flex-end;
+}
+
+.type4 .background,
+.type8 .background {
+  inset: var(--spacing-01) 0 var(--spacing-01) -10%;
+  width: 110%;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.type4 .background::before,
+.type8 .background::before {
+  background-image: linear-gradient(
+      to bottom right,
+      transparent,
+      50%,
+      currentColor,
+      50%,
+      currentColor,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(50% + calc(1.25 * var(--border-widths-normal))),
+      transparent
+    ),
+    linear-gradient(
+      to left,
+      currentColor,
+      0%,
+      currentColor,
+      calc(0% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(1.25 * var(--border-widths-normal)),
+      transparent
+    ),
+    linear-gradient(
+      to top,
+      currentColor,
+      0%,
+      currentColor,
+      calc(0% + calc(1.25 * var(--border-widths-normal))),
+      transparent,
+      calc(1.25 * var(--border-widths-normal)),
+      transparent
+    );
+}

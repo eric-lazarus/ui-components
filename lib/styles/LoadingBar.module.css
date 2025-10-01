@@ -1,0 +1,63 @@
+.loadingBarContainer {
+  box-shadow: var(--shadows-blur-light-medium-heavy),
+    var(--shadows-blur-dark-medium);
+  height: var(--spacing-12);
+  width: 100%;
+  background-color: var(--colors-neutral-gray40);
+}
+
+.loadingBar {
+  background-color: var(--colors-brand-bright-blue);
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--colors-neutral-gray40);
+  height: 100%;
+  overflow: hidden;
+  transition: all calc(1s * var(--durations-long));
+  transition-timing-function: ease-out;
+  width: 0;
+}
+
+.finished {
+  transition: all calc(1s * var(--durations-longer)) !important;
+  width: 100% !important;
+}
+
+.loadingBar2 {
+  width: 100%;
+}
+
+@keyframes loadBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes loadBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes finishLoad {
+  from {
+    width: 0;
+  }
+  to {
+    width: 97%;
+  }
+}
+
+@-webkit-keyframes finishLoad {
+  from {
+    width: 0;
+  }
+  to {
+    width: 97%;
+  }
+}

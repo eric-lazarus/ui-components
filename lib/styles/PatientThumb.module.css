@@ -1,0 +1,152 @@
+.light {
+  background-color: var(--colors-neutral-light);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark10);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  border: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light10);
+  color: var(--colors-neutral-light);
+}
+
+.dark:hover {
+  box-shadow: var(--shadows-blur-light-medium);
+}
+
+.dark.clickedPatientThumb {
+  box-shadow: var(--shadows-blur-light-medium-heavy);
+}
+
+.light:hover {
+  box-shadow: var(--shadows-blur-dark-medium-light);
+}
+
+.light.clickedPatientThumb {
+  box-shadow: var(--shadows-blur-dark-medium-heavy);
+}
+
+.patientThumb {
+  align-items: center;
+  border-radius: var(--radii-full) 0 0 var(--radii-full);
+  box-shadow: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: grid;
+  font-family: var(--font-families-stylized);
+  gap: var(--spacing-03);
+  grid-auto-flow: column;
+  grid-template-columns: auto auto;
+  line-height: var(--line-heights-stylized);
+  margin-bottom: 1em;
+  min-width: 32em;
+  padding: var(--spacing-01) var(--spacing-03) var(--spacing-01)
+    var(--spacing-01);
+  position: relative;
+  transition: calc(1s * var(--durations-medium));
+  width: 100%;
+}
+
+.isLinked {
+  background-color: var(--colors-brand-bright-blue);
+  border-radius: var(--radii-full);
+  color: var(--colors-neutral-dark);
+  font-size: var(--font-sizes-tiny);
+  display: inline-block;
+  padding: var(--spacing-01) var(--spacing-02) var(--spacing-00half);
+}
+
+.patientThumb .imageDiv {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-02);
+  min-width: var(--spacing-12);
+}
+
+.patientThumb .image {
+  border-radius: var(--radii-full);
+  height: 100%;
+  width: auto;
+}
+
+.patientThumb .nameDiv,
+.patientThumb .imageDiv p {
+  margin-top: var(--spacing-001pixel);
+}
+
+.patientThumb .nameDiv {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-02);
+  justify-content: space-between;
+}
+
+.patientThumb p {
+  margin: 0;
+}
+
+.patientThumb svg {
+  fill: currentColor;
+}
+
+.patientThumb .right {
+  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--spacing-08);
+  justify-content: flex-end;
+}
+
+.patientThumb .birthdateDiv,
+.patientThumb .lastUpdatedDiv {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-00half);
+  justify-content: center;
+}
+
+.patientThumb .lastUpdatedDiv {
+  flex: 1;
+}
+
+.patientThumb .birthdateDiv p:first-child,
+.patientThumb .lastUpdatedDiv p:first-child {
+  font-size: var(--font-sizes-tiny);
+  opacity: var(--opacities-80);
+}
+
+@media screen and (max-width: 768px) {
+  .patientThumb {
+    gap: var(--spacing-02);
+    grid-template-columns: auto 2fr;
+    justify-content: space-between;
+    padding: var(--spacing-02);
+  }
+
+  .patientThumb .imageDiv {
+    gap: var(--spacing-02);
+  }
+
+  .patientThumb .imageDiv button {
+    height: var(--spacing-08);
+    min-width: var(--spacing-08);
+    width: var(--spacing-08);
+  }
+
+  .patientThumb .nameDiv {
+    gap: var(--spacing-01);
+    width: min-content;
+  }
+
+  .patientThumb .birthdateDiv,
+  .patientThumb .lastUpdatedDiv {
+    font-size: var(--font-sizes-small);
+    margin-top: var(--spacing-00half);
+  }
+
+  .patientThumb .right {
+    gap: var(--spacing-02half);
+  }
+}

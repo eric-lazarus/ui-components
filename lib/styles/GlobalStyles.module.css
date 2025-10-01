@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Work+Sans:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'OCR A Std';
+  src: url('../fonts/OCRAStd.otf') format('opentype');
+}
+
+@media (max-width: 768px) {
+  :root,
+  body {
+    --font-sizes-xl6: var(--font-sizes-mobile-xl6);
+    --font-sizes-xl5: var(--font-sizes-mobile-xl5);
+    --font-sizes-xl4: var(--font-sizes-mobile-xl4);
+    --font-sizes-xl3: var(--font-sizes-mobile-xl3);
+    --font-sizes-xl2: var(--font-sizes-mobile-xl2);
+    --font-sizes-xl: var(--font-sizes-mobile-xl);
+    --font-sizes-large: var(--font-sizes-mobile-large);
+    --font-sizes-medium: var(--font-sizes-mobile-medium);
+    --font-sizes-normal: var(--font-sizes-mobile-normal);
+    --font-sizes-small: var(--font-sizes-mobile-small);
+    --font-sizes-tiny: var(--font-sizes-mobile-tiny);
+  }
+}
+
+body {
+  --scrollbar-color-thumb-bg: var(--colors-semi-transparent-gray10);
+  --scrollbar-color-thumb-border: var(--colors-semi-transparent-gray30);
+  --scrollbar-color-track-border: var(--colors-semi-transparent-gray20);
+
+  line-height: var(--line-heights-stylized);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-families-heading);
+  font-weight: var(--font-weights-bold);
+}
+
+button,
+p {
+  margin-bottom: var(--spacing-02);
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: var(--spacing-01);
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-size: var(--font-sizes-xl);
+}
+
+h3 {
+  font-size: var(--font-sizes-large);
+}
+
+h4 {
+  font-size: var(--font-sizes-medium);
+}
+
+h5,
+h6 {
+  font-size: var(--font-sizes-normal);
+}
+
+ul {
+  margin-bottom: var(--spacing-06);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex1 {
+  flex: initial;
+}
+
+.flex1 > * {
+  flex: 1;
+}
+
+.justifySpaceBetween {
+  justify-content: space-between;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.whiteText {
+  color: var(--colors-neutral-light);
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+  display: initial !important;
+}
+
+.customScrollbar::-webkit-scrollbar {
+  display: initial !important;
+  width: 12px;
+}
+
+.customScrollbar::-webkit-scrollbar:horizontal {
+  border-top: solid var(--border-widths-normal)
+    var(--scrollbar-color-track-border);
+}
+
+.customScrollbar::-webkit-scrollbar:vertical {
+  border-left: solid var(--border-widths-normal)
+    var(--scrollbar-color-track-border);
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  background-color: var(--scrollbar-color-thumb-bg) !important;
+  border-radius: var(--radii-full) !important;
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 var(--border-widths-normal)
+    var(--scrollbar-color-thumb-border);
+  box-sizing: border-box;
+  display: initial !important;
+}
+
+.customScrollbar::-webkit-scrollbar-corner {
+  background: transparent !important;
+  display: initial !important;
+}
+
+.text-atlantic {
+  color: var(--colors-brand-atlantic) !important;
+}
+
+.text-bright-blue {
+  color: var(--colors-brand-bright-blue) !important;
+}
+
+.text-bright-green {
+  color: var(--colors-brand-bright-green) !important;
+}
+
+.text-bright-orange {
+  color: var(--colors-brand-bright-orange) !important;
+}
+
+.text-blue-gray {
+  color: var(--colors-brand-blue-gray) !important;
+}
+
+.text-blue-gray-light {
+  color: var(--colors-brand-blue-gray-light) !important;
+}
+
+.text-burnt-orange {
+  color: var(--colors-brand-burnt-orange) !important;
+}
+
+.text-error {
+  color: var(--colors-brand-state-error-contrast-light) !important;
+}
+
+.text-error-light {
+  color: var(--colors-brand-state-error-contrast-dark) !important;
+}
+
+.text-french-puce {
+  color: var(--colors-brand-french-puce) !important;
+}
+
+.text-gold {
+  color: var(--colors-brand-gold) !important;
+}
+
+.text-japanese-laurel {
+  color: var(--colors-brand-japanese-laurel) !important;
+}
+
+.text-light-blue {
+  color: var(--colors-brand-light-blue) !important;
+}
+
+.text-metallic-blue {
+  color: var(--colors-brand-metallic-blue) !important;
+}
+
+.text-salem {
+  color: var(--colors-brand-salem) !important;
+}
+
+.text-success {
+  color: var(--colors-brand-state-success-contrast-light) !important;
+}
+
+.text-success-light {
+  color: var(--colors-brand-state-success-contrast-dark) !important;
+}
+
+.background-atlantic {
+  background-color: var(--colors-brand-atlantic) !important;
+}
+
+.background-bright-blue {
+  background-color: var(--colors-brand-bright-blue) !important;
+}
+
+.background-bright-green {
+  background-color: var(--colors-brand-bright-green) !important;
+}
+
+.background-bright-orange {
+  background-color: var(--colors-brand-bright-orange) !important;
+}
+
+.background-blue-gray {
+  background-color: var(--colors-brand-blue-gray) !important;
+}
+
+.background-blue-gray-light {
+  background-color: var(--colors-brand-blue-gray-light) !important;
+}
+
+.background-burnt-orange {
+  background-color: var(--colors-brand-burnt-orange) !important;
+}
+
+.background-dark {
+  background-color: var(--colors-neutral-dark) !important;
+}
+
+.background-error {
+  background-color: var(--colors-brand-state-error-contrast-light) !important;
+}
+
+.background-error-light {
+  background-color: var(--colors-brand-state-error-contrast-dark) !important;
+}
+
+.background-french-puce {
+  background-color: var(--colors-brand-french-puce) !important;
+}
+
+.background-gray-5 {
+  background-color: var(--colors-neutral-gray5) !important;
+}
+
+.background-gray-20 {
+  background-color: var(--colors-neutral-gray20) !important;
+}
+
+.background-gold {
+  background-color: var(--colors-brand-gold) !important;
+}
+
+.background-japanese-laurel {
+  background-color: var(--colors-brand-japanese-laurel) !important;
+}
+
+.background-light-blue {
+  background-color: var(--colors-brand-light-blue) !important;
+}
+
+.background-metallic-blue {
+  background-color: var(--colors-brand-metallic-blue) !important;
+}
+
+.background-salem {
+  background-color: var(--colors-brand-salem) !important;
+}
+
+.background-success {
+  background-color: var(--colors-brand-state-success-contrast-light) !important;
+}
+
+.background-success-light {
+  background-color: var(--colors-brand-state-success-contrast-dark) !important;
+}

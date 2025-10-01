@@ -1,0 +1,55 @@
+.loader {
+  height: var(--spacing-08);
+  transform-origin: center;
+  overflow: visible;
+  padding: var(--spacing-01);
+  position: absolute;
+  width: var(--spacing-08);
+}
+
+.circle {
+  animation: dash calc(1s * var(--durations-longest)) ease-in-out infinite;
+  fill: none;
+  stroke-width: var(--spacing-01);
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+}
+
+.light {
+  color: var(--colors-neutral-black);
+}
+
+.dark {
+  color: var(--colors-neutral-light);
+}
+
+.light .circle {
+  stroke: currentColor;
+  opacity: var(--opacities-80);
+}
+
+.dark .circle {
+  stroke: currentColor;
+  opacity: var(--opacities-90);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}

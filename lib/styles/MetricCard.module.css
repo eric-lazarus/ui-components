@@ -1,0 +1,61 @@
+.metricCard {
+  min-width: 0;
+}
+
+.metricCard .content {
+  display: grid;
+  gap: var(--spacing-00half) var(--spacing-02);
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-areas:
+    'icon value value'
+    'icon2 column1 column2';
+}
+
+.metricCard .icon,
+.metricCard .icon2 {
+  grid-area: icon;
+  height: var(--spacing-04);
+  overflow: hidden;
+  width: var(--spacing-04);
+}
+
+.metricCard .icon i,
+.metricCard .icon2 i {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.metricCard .icon {
+  grid-area: icon;
+  margin-top: var(--spacing-02);
+}
+
+.metricCard .icon2 {
+  grid-area: icon2;
+}
+
+@media screen and (max-width: 768px) {
+  .metricCard .icon {
+    margin-top: var(--spacing-01);
+  }
+
+  .metricCard .icon,
+  .metricCard .icon2 {
+    height: var(--spacing-03);
+    width: var(--spacing-03);
+  }
+}
+
+.metricCard .value {
+  font-size: var(--font-sizes-xl);
+  grid-area: value;
+}
+
+.metricCard .column1 {
+  grid-area: column1;
+}
+
+.metricCard .column2 {
+  grid-area: column2;
+}

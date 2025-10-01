@@ -1,0 +1,123 @@
+.testSetThumb {
+  border: 0;
+  box-sizing: border-box;
+  box-shadow: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-families-stylized);
+  padding: var(--spacing-03) var(--spacing-04);
+  transition: all calc(var(--durations-medium) * 1s);
+  width: 100%;
+}
+
+.light {
+  background-color: var(--colors-neutral-light);
+  border-bottom: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-dark10);
+  color: var(--colors-neutral-dark);
+}
+
+.dark {
+  background-color: var(--colors-neutral-dark);
+  border-bottom: solid var(--border-widths-normal)
+    var(--colors-semi-transparent-light10);
+  color: var(--colors-neutral-light);
+}
+
+.blueHighlight {
+  background-color: var(--colors-brand-bright-blue);
+  color: var(--colors-neutral-dark);
+  border-radius: var(--radii-full);
+  font-size: var(--font-sizes-tiny);
+  display: inline-block;
+  padding: var(--spacing-01) var(--spacing-02) var(--spacing-00half);
+}
+
+.testSetThumb p {
+  margin: 0;
+}
+
+.testSetThumb svg {
+  display: block;
+  fill: currentColor;
+  height: var(--spacing-05);
+  max-width: var(--spacing-05);
+  width: var(--spacing-05);
+}
+
+.top,
+.top div,
+.middle,
+.conditionDiv {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-02);
+}
+
+.top {
+  justify-content: space-between;
+}
+
+.bottom,
+.moleBottom {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom {
+  padding-top: 0;
+}
+
+.moleBottom {
+  padding-top: 0;
+  height: var(--spacing-08);
+  margin-top: calc(-1 * var(--spacing-02));
+}
+
+.conditionDiv {
+  flex: 1;
+}
+
+.conditionIndicator {
+  border-radius: var(--radii-full);
+  height: var(--spacing-02);
+  margin: var(--spacing-00half);
+  width: var(--spacing-02);
+}
+
+.bottom p,
+.middle p {
+  opacity: var(--opacities-80);
+}
+
+.red {
+  background-color: var(--colors-brand-state-error);
+}
+
+.orange {
+  background-color: var(--colors-brand-state-warn-contrast-light);
+}
+
+.yellow {
+  background-color: var(--colors-brand-state-warn-contrast-dark);
+}
+
+.green {
+  background-color: var(--colors-brand-state-success);
+}
+
+.fontSmall {
+  font-size: var(--font-sizes-small);
+}
+
+@media screen and (max-width: 768px) {
+  .testSetThumb {
+    padding: var(--spacing-02) var(--spacing-03);
+  }
+
+  .testSetThumb svg {
+    width: var(--spacing-04);
+  }
+}
