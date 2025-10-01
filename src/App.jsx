@@ -43,7 +43,7 @@ import {
   Animation,
   CollapseCard,
   FrequentlyAskedQuestions
-} from '../dist/main.js'
+} from 'component-library'
 
 import Helpers from '../lib/Helpers.js'
 

@@ -10,6 +10,9 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
   plugins: [react(), svgr()],
     build: {
+      rollupOptions: {
+        external: ['react', 'react/jsx-runtime'],
+      },
       lib: {
         entry: ['lib/main.js'],
         formats: ['es']
